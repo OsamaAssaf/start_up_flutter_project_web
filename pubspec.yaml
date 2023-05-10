@@ -19,20 +19,58 @@ dependencies:
   get: ^4.6.5
   shared_preferences: ^2.1.1
   http: ^0.13.6
+  flutter_native_splash: ^2.2.19
   
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_launcher_icons: "^0.13.1"
+  flutter_lints: ^2.0.0
 
+########## flutter_launcher_icons ##########
+  flutter_launcher_icons: "^0.13.1"
 flutter_launcher_icons:
   android: "launcher_icon"
   ios: true
   image_path: "assets/icon/icon.png"
-  min_sdk_android: 21
+  min_sdk_android: 21 # android min sdk min:16, default 21
+  web:
+    generate: true
+    image_path: "path/to/image.png"
+    background_color: "#hexcode"
+    theme_color: "#hexcode"
+  windows:
+    generate: true
+    image_path: "path/to/image.png"
+    icon_size: 48 # min:48, max:256, default: 48
+  macos:
+    generate: true
+    image_path: "path/to/image.png"
 
-  flutter_lints: ^2.0.0
+#  flutter pub get
+#  flutter pub run flutter_launcher_icons
+
+########## flutter_launcher_icons ##########
+
+########## flutter_native_splash ##########
+
+flutter_native_splash:
+  # flutter pub run flutter_native_splash:create
+  # flutter pub run flutter_native_splash:remove
+  color: "#42a5f5"
+  #background_image: "assets/background.png"
+  #image: assets/splash.png
+  #branding: assets/dart.png
+
+  # bottom, bottomRight, bottomLeft
+  #branding_mode: bottom
+
+  #color_dark: "#042a49"
+  #background_image_dark: "assets/dark-background.png"
+  #image_dark: assets/splash-invert.png
+  #branding_dark: assets/dart_dark.png
+
+########## flutter_native_splash ##########
 
 flutter:
 
