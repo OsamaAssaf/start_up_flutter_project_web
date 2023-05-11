@@ -80,7 +80,7 @@ ThemeData getApplicationTheme() {
 
     /// input decoration theme (text form field)
     inputDecorationTheme: InputDecorationTheme(
-      contentPadding: EdgeInsets.all(8.0),
+      contentPadding:const EdgeInsets.all(8.0),
       hintStyle: TextStyle(
         color: ColorManager.grey,
         fontSize: 14.0,
@@ -97,7 +97,7 @@ ThemeData getApplicationTheme() {
           color: ColorManager.grey,
           width: 1.5,
         ),
-        borderRadius: BorderRadius.all(
+        borderRadius: const BorderRadius.all(
           Radius.circular(
             8.0,
           ),
@@ -108,7 +108,7 @@ ThemeData getApplicationTheme() {
           color: ColorManager.primary,
           width: 1.5,
         ),
-        borderRadius: BorderRadius.all(
+        borderRadius:const BorderRadius.all(
           Radius.circular(
             8.0,
           ),
@@ -119,7 +119,7 @@ ThemeData getApplicationTheme() {
           color: ColorManager.error,
           width: 1.5,
         ),
-        borderRadius: BorderRadius.all(
+        borderRadius:const BorderRadius.all(
           Radius.circular(
             8.0,
           ),
@@ -130,13 +130,18 @@ ThemeData getApplicationTheme() {
           color: ColorManager.primary,
           width: 1.5,
         ),
-        borderRadius: BorderRadius.all(
+        borderRadius:const BorderRadius.all(
           Radius.circular(
             8.0,
           ),
         ),
       ),
     ),
+   drawerTheme:const DrawerThemeData(
+    elevation: 2,
+    width: 100,
+   )
+ 
   );
 }
 
@@ -218,7 +223,7 @@ ThemeData getApplicationDarkTheme() {
 
     /// input decoration theme (text form field)
     inputDecorationTheme: InputDecorationTheme(
-      contentPadding: EdgeInsets.all(8.0),
+      contentPadding:const EdgeInsets.all(8.0),
       hintStyle: TextStyle(
         color: ColorManager.grey,
         fontSize: 14.0,
@@ -235,7 +240,7 @@ ThemeData getApplicationDarkTheme() {
           color: ColorManager.grey,
           width: 1.5,
         ),
-        borderRadius: BorderRadius.all(
+        borderRadius:const BorderRadius.all(
           Radius.circular(
             8.0,
           ),
@@ -246,7 +251,7 @@ ThemeData getApplicationDarkTheme() {
           color: ColorManager.primary,
           width: 1.5,
         ),
-        borderRadius: BorderRadius.all(
+        borderRadius:const BorderRadius.all(
           Radius.circular(
             8.0,
           ),
@@ -257,7 +262,7 @@ ThemeData getApplicationDarkTheme() {
           color: ColorManager.error,
           width: 1.5,
         ),
-        borderRadius: BorderRadius.all(
+        borderRadius: const BorderRadius.all(
           Radius.circular(
             8.0,
           ),
@@ -268,7 +273,7 @@ ThemeData getApplicationDarkTheme() {
           color: ColorManager.primary,
           width: 1.5,
         ),
-        borderRadius: BorderRadius.all(
+        borderRadius:const BorderRadius.all(
           Radius.circular(
             8.0,
           ),
