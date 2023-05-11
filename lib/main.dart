@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:get/get.dart';
 
-import 'modules/home/view/home_view.dart';
+import 'resources/routes_manager.dart';
 import 'resources/theme_manager.dart';
 
 void main() {
@@ -21,7 +21,12 @@ class MyApp extends StatelessWidget {
       supportedLocales: AppLocalizations.supportedLocales,
       theme: getApplicationTheme(),
       darkTheme: getApplicationDarkTheme(),
-      home: const HomeView(),
+      initialRoute: Routes.splashRoute,
+      getPages: RouteGenerator.getPages(),
+      unknownRoute: GetPage(
+        name: '/notfound',
+        page: () => RouteGenerator.unDefinedRoute(context),
+      ),
     );
   }
 }

@@ -1,4 +1,11 @@
 {
   "appName": "App Name",
-  "noRouteFound": "No Route Found"
+  "noRouteFound": "No Route Found",
+  "login": "Log In",
+  "signUp": "Sign Up",
+  "email": "Email",
+  "password": "Password",
+  "username": "Username",
+  "donnotHaveAnAccount": "Don't have an account?",
+  "haveAnAccount": "Have an account?"
 }
