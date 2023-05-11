@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:start_up_workspace/modules/auth/binding/auth_binding.dart';
-import 'package:start_up_workspace/modules/auth/controller/auth_controller.dart';
 import 'package:start_up_workspace/modules/splash/binding/splash_binding.dart';
 import '../modules/auth/view/auth_view.dart';
 import '../modules/home/view/home_view.dart';
