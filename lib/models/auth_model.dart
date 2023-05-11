@@ -1,14 +1,15 @@
 class AuthModel {
-   String? token;
-   String? userId;
-   String? userName;
-   String? userEmail;
-   String? userPassword;
+  String? token;
+  String? userId;
+  String? username;
+  String? email;
+  String? password;
 
-  AuthModel(
-      { this.token,
-       this.userId,
-       this.userName,
-       this.userEmail,
-       this.userPassword});
+  AuthModel({
+    this.token,
+    this.userId,
+    this.username,
+    this.email,
+    this.password,
+  });
 }
