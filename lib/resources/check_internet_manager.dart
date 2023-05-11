@@ -4,8 +4,8 @@ import 'package:data_connection_checker_nulls/data_connection_checker_nulls.dart
 
 class CheckInternet {
   StreamSubscription<DataConnectionStatus>? listener;
-  var internetStatus = "Unknown";
-  var contentmessage = "Unknown";
+  String internetStatus = "Unknown";
+  String contentmessage = "Unknown";
 
   checkConnection(BuildContext context) async {
     listener = DataConnectionChecker().onStatusChange.listen((status) {
