@@ -1,4 +1,11 @@
 {
   "appName": "اسم التطبيق",
-  "noRouteFound": "لا يوجد صفحة"
+  "noRouteFound": "لا يوجد صفحة",
+  "login": "دخول",
+  "signUp": "تسجيل",
+  "email": "البريد الالكتروني",
+  "password": "كلمة المرور",
+  "username": "اسم المستخدم",
+  "donnotHaveAnAccount": "ليس لديك حساب؟",
+  "haveAnAccount": "لديك حساب؟"
 }

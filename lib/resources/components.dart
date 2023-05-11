@@ -1,11 +1,25 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class Components {
   static void snackBar() {
     Get.showSnackbar(
-      GetSnackBar(
-        duration: const Duration(seconds: 3),
+     const GetSnackBar(
+        snackPosition: SnackPosition.BOTTOM,
+        duration:  Duration(seconds: 3),
       ),
+    );
+  }
+
+    static void loading() {
+    Get.dialog(
+      WillPopScope(
+        onWillPop: () async => false,
+        child: const Center(
+          child: CircularProgressIndicator(),
+        ),
+      ),
+      barrierDismissible: false,
     );
   }
 }
