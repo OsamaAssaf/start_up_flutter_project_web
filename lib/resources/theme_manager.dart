@@ -4,12 +4,19 @@ import 'color_manager.dart';
 
 ThemeData getApplicationTheme() {
   return ThemeData(
+    useMaterial3: true,
+
     /// main colors
-    primaryColor: ColorManager.primary,
+    // primaryColor: ColorManager.primary,
     primaryColorLight: ColorManager.lightPrimary,
     primaryColorDark: ColorManager.darkPrimary,
     disabledColor: ColorManager.grey1,
     splashColor: ColorManager.lightPrimary,
+    colorScheme: ColorScheme.fromSwatch().copyWith(
+      primary: ColorManager.primary,
+      secondary: ColorManager.secondary,
+      background: ColorManager.white,
+    ),
 
     /// card view theme
     cardTheme: CardTheme(
@@ -57,6 +64,17 @@ ThemeData getApplicationTheme() {
         fontSize: 16.0,
         fontWeight: FontWeight.bold,
       ),
+      // used in auth screen
+      displayMedium: TextStyle(
+        color: ColorManager.white,
+        fontSize: 40.0,
+        fontWeight: FontWeight.bold,
+      ),
+      // used in auth screen
+      displaySmall: TextStyle(
+        color: ColorManager.white,
+        fontSize: 18.0,
+      ),
       headlineLarge: TextStyle(
         color: ColorManager.darkGrey,
         fontSize: 16.0,
@@ -74,7 +92,8 @@ ThemeData getApplicationTheme() {
         color: ColorManager.grey1,
       ),
       bodySmall: TextStyle(
-        color: ColorManager.grey,
+        color: ColorManager.white,
+        fontSize: 16.0,
       ),
     ),
 
