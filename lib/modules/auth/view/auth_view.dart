@@ -45,7 +45,9 @@ class AuthView extends StatelessWidget {
                             GetBuilder<AuthController>(
                               builder: (controller) {
                                 return Text(
-                                  localizations.login,
+                                  controller.authType == AuthType.login
+                                      ? localizations.login
+                                      : localizations.signUp,
                                   style: theme.textTheme.displayMedium,
                                 );
                               },
@@ -58,6 +60,31 @@ class AuthView extends StatelessWidget {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
+                                  GetBuilder<AuthController>(
+                                    builder: (controller) {
+                                      if (controller.authType ==
+                                          AuthType.login) {
+                                        return const SizedBox.shrink();
+                                      }
+                                      return Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            localizations.email,
+                                            style: theme.textTheme.displaySmall,
+                                          ),
+                                          const SizedBox(
+                                            height: 10,
+                                          ),
+                                          const TextField(),
+                                        ],
+                                      );
+                                    },
+                                  ),
+                                  const SizedBox(
+                                    height: 10,
+                                  ),
                                   Text(
                                     localizations.email,
                                     style: theme.textTheme.displaySmall,
@@ -65,27 +92,7 @@ class AuthView extends StatelessWidget {
                                   const SizedBox(
                                     height: 10,
                                   ),
-                                  TextField(),
-                                  // MyTextField(
-                                  //   onChanged: (() {
-                                  //     validateEmail(emailController.text);
-                                  //   }),
-                                  //   controller: emailController,
-                                  //   hintText: "hello@gmail.com",
-                                  //   obscureText: false,
-                                  //   prefixIcon: const Icon(Icons.mail_outline),
-                                  // ),
-                                  // Padding(
-                                  //   padding:
-                                  //       const EdgeInsets.fromLTRB(8, 0, 0, 0),
-                                  //   child: Text(
-                                  //     _errorMessage,
-                                  //     style: GoogleFonts.poppins(
-                                  //       fontSize: 12,
-                                  //       color: Colors.red,
-                                  //     ),
-                                  //   ),
-                                  // ),
+                                  const TextField(),
                                   const SizedBox(
                                     height: 10,
                                   ),
@@ -96,13 +103,7 @@ class AuthView extends StatelessWidget {
                                   const SizedBox(
                                     height: 10,
                                   ),
-                                  TextField(),
-                                  // MyTextField(
-                                  //   controller: passwordController,
-                                  //   hintText: "**************",
-                                  //   obscureText: true,
-                                  //   prefixIcon: const Icon(Icons.lock_outline),
-                                  // ),
+                                  const TextField(),
                                   const SizedBox(
                                     height: 20,
                                   ),
@@ -111,6 +112,7 @@ class AuthView extends StatelessWidget {
                                     children: [
                                       FilledButton(
                                         onPressed: () {
+                                        
                                           _authController.submit();
                                         },
                                         child: Text(
