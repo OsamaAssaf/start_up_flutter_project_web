@@ -1,211 +1,209 @@
 import 'package:flutter/material.dart';
 
-import 'color_manager.dart';
+import 'colors_manager.dart';
 
 ThemeData getApplicationTheme() {
   return ThemeData(
-    useMaterial3: true,
+      useMaterial3: true,
 
-    /// main colors
-    // primaryColor: ColorManager.primary,
-    primaryColorLight: ColorManager.lightPrimary,
-    primaryColorDark: ColorManager.darkPrimary,
-    disabledColor: ColorManager.grey1,
-    splashColor: ColorManager.lightPrimary,
-    colorScheme: ColorScheme.fromSwatch().copyWith(
-      primary: ColorManager.primary,
-      secondary: ColorManager.secondary,
-      background: ColorManager.white,
-    ),
-
-    /// card view theme
-    cardTheme: CardTheme(
-      color: ColorManager.white,
-      shadowColor: ColorManager.grey,
-      elevation: 4.0,
-    ),
-
-    /// app bar theme
-    appBarTheme: AppBarTheme(
-      centerTitle: true,
-      color: ColorManager.primary,
-      elevation: 4.0,
-      shadowColor: ColorManager.lightPrimary,
-      titleTextStyle: TextStyle(
-        fontSize: 16.0,
-        color: ColorManager.white,
+      /// main colors
+      // primaryColor: ColorManager.primary,
+      primaryColorLight: ColorsManager.lightPrimary,
+      primaryColorDark: ColorsManager.darkPrimary,
+      disabledColor: ColorsManager.grey1,
+      splashColor: ColorsManager.lightPrimary,
+      colorScheme: ColorScheme.fromSwatch().copyWith(
+        primary: ColorsManager.primary,
+        secondary: ColorsManager.secondary,
+        background: ColorsManager.white,
       ),
-    ),
 
-    /// button theme
-    buttonTheme: ButtonThemeData(
-      shape: const StadiumBorder(),
-      disabledColor: ColorManager.grey1,
-      buttonColor: ColorManager.primary,
-      splashColor: ColorManager.lightPrimary,
-    ),
-    elevatedButtonTheme: ElevatedButtonThemeData(
-      style: ElevatedButton.styleFrom(
-        textStyle: TextStyle(
-          color: ColorManager.white,
-          fontSize: 17.0,
-        ),
-        backgroundColor: ColorManager.primary,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12.0),
+      /// card view theme
+      cardTheme: CardTheme(
+        color: ColorsManager.white,
+        shadowColor: ColorsManager.grey,
+        elevation: 4.0,
+      ),
+
+      /// app bar theme
+      appBarTheme: AppBarTheme(
+        centerTitle: true,
+        color: ColorsManager.primary,
+        elevation: 4.0,
+        shadowColor: ColorsManager.lightPrimary,
+        titleTextStyle: TextStyle(
+          fontSize: 16.0,
+          color: ColorsManager.white,
         ),
       ),
-    ),
 
-    /// text theme
-    textTheme: TextTheme(
-      displayLarge: TextStyle(
-        color: ColorManager.darkGrey,
-        fontSize: 16.0,
-        fontWeight: FontWeight.bold,
+      /// button theme
+      buttonTheme: ButtonThemeData(
+        shape: const StadiumBorder(),
+        disabledColor: ColorsManager.grey1,
+        buttonColor: ColorsManager.primary,
+        splashColor: ColorsManager.lightPrimary,
       ),
-      // used in auth screen
-      displayMedium: TextStyle(
-        color: ColorManager.white,
-        fontSize: 40.0,
-        fontWeight: FontWeight.bold,
-      ),
-      // used in auth screen
-      displaySmall: TextStyle(
-        color: ColorManager.white,
-        fontSize: 18.0,
-      ),
-      headlineLarge: TextStyle(
-        color: ColorManager.darkGrey,
-        fontSize: 16.0,
-        fontWeight: FontWeight.w700,
-      ),
-      headlineMedium: TextStyle(
-        color: ColorManager.darkGrey,
-        fontSize: 14.0,
-      ),
-      titleMedium: TextStyle(
-        color: ColorManager.primary,
-        fontSize: 16.0,
-      ),
-      bodyLarge: TextStyle(
-        color: ColorManager.grey1,
-      ),
-      bodySmall: TextStyle(
-        color: ColorManager.white,
-        fontSize: 16.0,
-      ),
-    ),
-
-    /// input decoration theme (text form field)
-    inputDecorationTheme: InputDecorationTheme(
-      contentPadding:const EdgeInsets.all(8.0),
-      hintStyle: TextStyle(
-        color: ColorManager.grey,
-        fontSize: 14.0,
-      ),
-      labelStyle: TextStyle(
-        color: ColorManager.grey,
-        fontSize: 14.0,
-      ),
-      errorStyle: TextStyle(
-        color: ColorManager.error,
-      ),
-      enabledBorder: OutlineInputBorder(
-        borderSide: BorderSide(
-          color: ColorManager.grey,
-          width: 1.5,
-        ),
-        borderRadius: const BorderRadius.all(
-          Radius.circular(
-            8.0,
+      elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ElevatedButton.styleFrom(
+          textStyle: TextStyle(
+            color: ColorsManager.white,
+            fontSize: 17.0,
+          ),
+          backgroundColor: ColorsManager.primary,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12.0),
           ),
         ),
       ),
-      focusedBorder: OutlineInputBorder(
-        borderSide: BorderSide(
-          color: ColorManager.primary,
-          width: 1.5,
+
+      /// text theme
+      textTheme: TextTheme(
+        displayLarge: TextStyle(
+          color: ColorsManager.darkGrey,
+          fontSize: 16.0,
+          fontWeight: FontWeight.bold,
         ),
-        borderRadius:const BorderRadius.all(
-          Radius.circular(
-            8.0,
+        // used in auth screen
+        displayMedium: TextStyle(
+          color: ColorsManager.white,
+          fontSize: 40.0,
+          fontWeight: FontWeight.bold,
+        ),
+        // used in auth screen
+        displaySmall: TextStyle(
+          color: ColorsManager.white,
+          fontSize: 18.0,
+        ),
+        headlineLarge: TextStyle(
+          color: ColorsManager.darkGrey,
+          fontSize: 16.0,
+          fontWeight: FontWeight.w700,
+        ),
+        headlineMedium: TextStyle(
+          color: ColorsManager.darkGrey,
+          fontSize: 14.0,
+        ),
+        titleMedium: TextStyle(
+          color: ColorsManager.primary,
+          fontSize: 16.0,
+        ),
+        bodyLarge: TextStyle(
+          color: ColorsManager.grey1,
+        ),
+        bodySmall: TextStyle(
+          color: ColorsManager.white,
+          fontSize: 16.0,
+        ),
+      ),
+
+      /// input decoration theme (text form field)
+      inputDecorationTheme: InputDecorationTheme(
+        contentPadding: const EdgeInsets.all(8.0),
+        hintStyle: TextStyle(
+          color: ColorsManager.grey,
+          fontSize: 14.0,
+        ),
+        labelStyle: TextStyle(
+          color: ColorsManager.grey,
+          fontSize: 14.0,
+        ),
+        errorStyle: TextStyle(
+          color: ColorsManager.error,
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderSide: BorderSide(
+            color: ColorsManager.grey,
+            width: 1.5,
+          ),
+          borderRadius: const BorderRadius.all(
+            Radius.circular(
+              8.0,
+            ),
+          ),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderSide: BorderSide(
+            color: ColorsManager.primary,
+            width: 1.5,
+          ),
+          borderRadius: const BorderRadius.all(
+            Radius.circular(
+              8.0,
+            ),
+          ),
+        ),
+        errorBorder: OutlineInputBorder(
+          borderSide: BorderSide(
+            color: ColorsManager.error,
+            width: 1.5,
+          ),
+          borderRadius: const BorderRadius.all(
+            Radius.circular(
+              8.0,
+            ),
+          ),
+        ),
+        focusedErrorBorder: OutlineInputBorder(
+          borderSide: BorderSide(
+            color: ColorsManager.primary,
+            width: 1.5,
+          ),
+          borderRadius: const BorderRadius.all(
+            Radius.circular(
+              8.0,
+            ),
           ),
         ),
       ),
-      errorBorder: OutlineInputBorder(
-        borderSide: BorderSide(
-          color: ColorManager.error,
-          width: 1.5,
-        ),
-        borderRadius:const BorderRadius.all(
-          Radius.circular(
-            8.0,
-          ),
-        ),
-      ),
-      focusedErrorBorder: OutlineInputBorder(
-        borderSide: BorderSide(
-          color: ColorManager.primary,
-          width: 1.5,
-        ),
-        borderRadius:const BorderRadius.all(
-          Radius.circular(
-            8.0,
-          ),
-        ),
-      ),
-    ),
-   drawerTheme:const DrawerThemeData(
-    elevation: 2,
-    width: 100,
-   )
- 
-  );
+      drawerTheme: const DrawerThemeData(
+        elevation: 2,
+        width: 100,
+      ));
 }
 
 ThemeData getApplicationDarkTheme() {
   return ThemeData(
     /// main colors
-    primaryColor: ColorManager.primary,
-    primaryColorLight: ColorManager.lightPrimary,
-    primaryColorDark: ColorManager.darkPrimary,
-    disabledColor: ColorManager.grey1,
-    splashColor: ColorManager.lightPrimary,
+    primaryColor: ColorsManager.primary,
+    primaryColorLight: ColorsManager.lightPrimary,
+    primaryColorDark: ColorsManager.darkPrimary,
+    disabledColor: ColorsManager.grey1,
+    splashColor: ColorsManager.lightPrimary,
 
     /// card view theme
     cardTheme: CardTheme(
-      color: ColorManager.white,
-      shadowColor: ColorManager.grey,
+      color: ColorsManager.white,
+      shadowColor: ColorsManager.grey,
       elevation: 4.0,
     ),
 
     /// app bar theme
     appBarTheme: AppBarTheme(
       centerTitle: true,
-      color: ColorManager.primary,
+      color: ColorsManager.primary,
       elevation: 4.0,
-      shadowColor: ColorManager.lightPrimary,
+      shadowColor: ColorsManager.lightPrimary,
       titleTextStyle: TextStyle(
         fontSize: 16.0,
-        color: ColorManager.white,
+        color: ColorsManager.white,
       ),
     ),
 
     /// button theme
     buttonTheme: ButtonThemeData(
       shape: const StadiumBorder(),
-      disabledColor: ColorManager.grey1,
-      buttonColor: ColorManager.primary,
-      splashColor: ColorManager.lightPrimary,
+      disabledColor: ColorsManager.grey1,
+      buttonColor: ColorsManager.primary,
+      splashColor: ColorsManager.lightPrimary,
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         textStyle: TextStyle(
-          color: ColorManager.white,
+          color: ColorsManager.white,
           fontSize: 17.0,
         ),
-        backgroundColor: ColorManager.primary,
+        backgroundColor: ColorsManager.primary,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12.0),
         ),
@@ -215,51 +213,51 @@ ThemeData getApplicationDarkTheme() {
     /// text theme
     textTheme: TextTheme(
       displayLarge: TextStyle(
-        color: ColorManager.darkGrey,
+        color: ColorsManager.darkGrey,
         fontSize: 16.0,
         fontWeight: FontWeight.bold,
       ),
       headlineLarge: TextStyle(
-        color: ColorManager.darkGrey,
+        color: ColorsManager.darkGrey,
         fontSize: 16.0,
         fontWeight: FontWeight.w700,
       ),
       headlineMedium: TextStyle(
-        color: ColorManager.darkGrey,
+        color: ColorsManager.darkGrey,
         fontSize: 14.0,
       ),
       titleMedium: TextStyle(
-        color: ColorManager.primary,
+        color: ColorsManager.primary,
         fontSize: 16.0,
       ),
       bodyLarge: TextStyle(
-        color: ColorManager.grey1,
+        color: ColorsManager.grey1,
       ),
       bodySmall: TextStyle(
-        color: ColorManager.grey,
+        color: ColorsManager.grey,
       ),
     ),
 
     /// input decoration theme (text form field)
     inputDecorationTheme: InputDecorationTheme(
-      contentPadding:const EdgeInsets.all(8.0),
+      contentPadding: const EdgeInsets.all(8.0),
       hintStyle: TextStyle(
-        color: ColorManager.grey,
+        color: ColorsManager.grey,
         fontSize: 14.0,
       ),
       labelStyle: TextStyle(
-        color: ColorManager.grey,
+        color: ColorsManager.grey,
         fontSize: 14.0,
       ),
       errorStyle: TextStyle(
-        color: ColorManager.error,
+        color: ColorsManager.error,
       ),
       enabledBorder: OutlineInputBorder(
         borderSide: BorderSide(
-          color: ColorManager.grey,
+          color: ColorsManager.grey,
           width: 1.5,
         ),
-        borderRadius:const BorderRadius.all(
+        borderRadius: const BorderRadius.all(
           Radius.circular(
             8.0,
           ),
@@ -267,10 +265,10 @@ ThemeData getApplicationDarkTheme() {
       ),
       focusedBorder: OutlineInputBorder(
         borderSide: BorderSide(
-          color: ColorManager.primary,
+          color: ColorsManager.primary,
           width: 1.5,
         ),
-        borderRadius:const BorderRadius.all(
+        borderRadius: const BorderRadius.all(
           Radius.circular(
             8.0,
           ),
@@ -278,7 +276,7 @@ ThemeData getApplicationDarkTheme() {
       ),
       errorBorder: OutlineInputBorder(
         borderSide: BorderSide(
-          color: ColorManager.error,
+          color: ColorsManager.error,
           width: 1.5,
         ),
         borderRadius: const BorderRadius.all(
@@ -289,10 +287,10 @@ ThemeData getApplicationDarkTheme() {
       ),
       focusedErrorBorder: OutlineInputBorder(
         borderSide: BorderSide(
-          color: ColorManager.primary,
+          color: ColorsManager.primary,
           width: 1.5,
         ),
-        borderRadius:const BorderRadius.all(
+        borderRadius: const BorderRadius.all(
           Radius.circular(
             8.0,
           ),

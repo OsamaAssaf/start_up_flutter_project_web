@@ -1,8 +1,8 @@
-const String assetsPath = 'assets';
-const String imagePath = '$assetsPath/images';
+const String _assetsPath = 'assets';
+const String _imagePath = '$_assetsPath/images';
 
 class ImageManager {
-  static const String loginImage = '$imagePath/login.png';
+  static const String loginImage = '$_imagePath/login.png';
 }
 
 class SoundsManager {}

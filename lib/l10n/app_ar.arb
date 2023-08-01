@@ -6,6 +6,20 @@
   "email": "البريد الالكتروني",
   "password": "كلمة المرور",
   "username": "اسم المستخدم",
-  "donnotHaveAnAccount": "ليس لديك حساب؟",
-  "haveAnAccount": "لديك حساب؟"
+  "doNotHaveAnAccount": "ليس لديك حساب؟",
+  "haveAnAccount": "لديك حساب؟",
+  "somethingWrongTryAgain": "حدث خطأ، أعد المحاولة !",
+  "pleaseEnterPassword": "الرجاء إدخال كلمة المرور",
+  "pleaseEnterConfirmPassword": "الرجاء إدخال تأكيد كلمة المرور",
+  "passwordMustContainUpperAndLower": "يجب أن تحتوي كلمة المرور على حرف واحد كبير وحرف صغير واحد على الأقل",
+  "passwordMustContainNumber": "يجب ان تحتوي كلمة المرور على الاقل رقما واحداً",
+  "passwordMustContainSymbol": "يجب أن تحتوي كلمة المرور على رمز واحد على الأقل",
+  "passwordMustBeMoreThatEight": "يجب أن تكون كلمة المرور مساوية أو أكثر من 8 أحرف",
+  "passwordDoesNotMatch": "كلمة المرور غير متطابقة",
+  "pleaseEnterPhone": "الرجاء إدخال رقم الهاتف",
+  "invalidPhoneNumber": "رقم الهاتف غير صالح",
+  "pleaseEnterEmail": "الرجاء إدخال البريد الالكتروني",
+  "invalidEmail": "البريد الالكتروني غير صالح"
+
+
 }

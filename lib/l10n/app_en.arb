@@ -6,6 +6,18 @@
   "email": "Email",
   "password": "Password",
   "username": "Username",
-  "donnotHaveAnAccount": "Don't have an account?",
-  "haveAnAccount": "Have an account?"
+  "doNotHaveAnAccount": "Don't have an account?",
+  "haveAnAccount": "Have an account?",
+  "somethingWrongTryAgain": "Something went wrong, try again!",
+  "pleaseEnterPassword": "Please enter password",
+  "pleaseEnterConfirmPassword": "Please enter confirm password",
+  "passwordMustContainUpperAndLower": "Password must contain at least one uppercase and one lowercase letter",
+  "passwordMustContainNumber": "Password must contain at least one number",
+  "passwordMustContainSymbol": "Password must contain at least one symbol",
+  "passwordMustBeMoreThatEight": "Password must be equal or more than 8 characters",
+  "passwordDoesNotMatch": "Password does not match",
+  "pleaseEnterPhone": "Please enter phone number",
+  "invalidPhoneNumber": "Invalid phone number",
+  "pleaseEnterEmail": "Please enter email",
+  "invalidEmail": "Invalid email"
 }

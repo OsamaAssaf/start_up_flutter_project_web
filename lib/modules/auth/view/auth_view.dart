@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:start_up_workspace/modules/auth/controller/auth_controller.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
+import '../../../main.dart';
 import '../../../resources/assets_manager.dart';
 
 class AuthView extends StatelessWidget {
@@ -13,7 +13,6 @@ class AuthView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final ThemeData theme = Theme.of(context);
-    final AppLocalizations localizations = AppLocalizations.of(context)!;
     return SafeArea(
       child: Scaffold(
         resizeToAvoidBottomInset: false,
@@ -112,7 +111,6 @@ class AuthView extends StatelessWidget {
                                     children: [
                                       FilledButton(
                                         onPressed: () {
-                                        
                                           _authController.submit();
                                         },
                                         child: Text(
@@ -130,7 +128,7 @@ class AuthView extends StatelessWidget {
                                     child: Row(
                                       children: [
                                         Text(
-                                          localizations.donnotHaveAnAccount,
+                                          localizations.doNotHaveAnAccount,
                                           style: theme.textTheme.bodySmall,
                                         ),
                                         TextButton(

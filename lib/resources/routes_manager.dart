@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:start_up_workspace/modules/auth/binding/auth_binding.dart';
 import 'package:start_up_workspace/modules/splash/binding/splash_binding.dart';
+import '../main.dart';
 import '../modules/auth/view/auth_view.dart';
 import '../modules/home/view/home_view.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../modules/splash/view/splash_view.dart';
 
@@ -34,8 +34,7 @@ class RouteGenerator {
     ];
   }
 
-  static Scaffold unDefinedRoute(BuildContext context) {
-    final AppLocalizations localizations = AppLocalizations.of(context)!;
+  static Scaffold unDefinedRoute() {
     return Scaffold(
       appBar: AppBar(
         title: Text(localizations.noRouteFound),
