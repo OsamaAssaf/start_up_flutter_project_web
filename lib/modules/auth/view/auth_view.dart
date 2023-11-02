@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:start_up_workspace/resources/components.dart';
 import 'package:upgrader/upgrader.dart';
 
 import '../../../main.dart';
 import '../../../resources/assets_manager.dart';
+import '../../../resources/components.dart';
 import '../controller/auth_controller.dart';
 
 class AuthView extends StatelessWidget {

@@ -3,11 +3,11 @@ import 'package:flutter/services.dart';
 
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:start_up_workspace/resources/routes_manager.dart';
 
 import '../../../main.dart';
 import '../../../resources/assets_manager.dart';
 import '../../../resources/components.dart';
+import '../../../resources/routes_manager.dart';
 import '../../../resources/widgets/main_button.dart';
 
 class ConnectionErrorController extends GetxController {
