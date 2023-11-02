@@ -1,11 +1,8 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import '../main.dart';
 
 class Validators {
-  String? validateEmail(String? value, BuildContext context) {
-    final AppLocalizations localizations = AppLocalizations.of(context)!;
-    RegExp regex =
-        RegExp(r'^[\w-]+(\.[\w-]+)*@([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,7}$');
+  static String? validateEmail(String? value) {
+    RegExp regex = RegExp(r'^[\w-]+(\.[\w-]+)*@([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,7}$');
     if (value == null || value.isEmpty) {
       return localizations.pleaseEnterEmail;
     }
@@ -15,8 +12,7 @@ class Validators {
     return null;
   }
 
-  String? validatePassword(String? value, BuildContext context) {
-    final AppLocalizations localizations = AppLocalizations.of(context)!;
+  static String? validatePassword(String? value) {
     final uppercasePattern = RegExp(r'(?=.*[A-Z])');
     final lowercasePattern = RegExp(r'(?=.*[a-z])');
     final numberPattern = RegExp(r'(?=.*[0-9])');
@@ -39,9 +35,7 @@ class Validators {
     return null;
   }
 
-  String? validateConfirmPassword(
-      String? value, String password, BuildContext context) {
-    final AppLocalizations localizations = AppLocalizations.of(context)!;
+  static String? validateConfirmPassword(String? value, String password) {
     if (value == null || value.isEmpty) {
       return localizations.pleaseEnterConfirmPassword;
     }
@@ -51,8 +45,7 @@ class Validators {
     return null;
   }
 
-  String? validatePhone(String? value, BuildContext context) {
-    final AppLocalizations localizations = AppLocalizations.of(context)!;
+  static String? validatePhone(String? value) {
     RegExp regex = RegExp(r'^\+?[0-9]{8,}$');
     if (value == null || value.isEmpty) {
       return localizations.pleaseEnterPhone;

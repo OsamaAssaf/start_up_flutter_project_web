@@ -19,7 +19,23 @@
   "pleaseEnterPhone": "الرجاء إدخال رقم الهاتف",
   "invalidPhoneNumber": "رقم الهاتف غير صالح",
   "pleaseEnterEmail": "الرجاء إدخال البريد الالكتروني",
-  "invalidEmail": "البريد الالكتروني غير صالح"
-
-
+  "invalidEmail": "البريد الالكتروني غير صالح",
+  "connectionError": "خطأ في الاتصال",
+  "connectionFailedConnectServer": "عذرا، فشل الاتصال بالخادم.",
+  "yourDeviceNotConnectedInternet": "جهازك غير متصل بالإنترنت.",
+  "pleaseCheckYourConnectionTryAgain": "يرجى التحقق من اتصالك وحاول مرة أخرى.",
+  "retry": "أعد المحاولة",
+  "close": "أغلق",
+  "chooseHowImageWillDisplayed": "اختر كيف سوف يتم عرض الصورة",
+  "chooseTheTime": "اختر الوقت",
+  "locationPermissionDenied": "الوصول للموقع مرفوض",
+  "locationServiceDisabled": "خدمة الموقع غير مفعلة",
+  "locationServiceMessage": ".يستخدم تطبيقنا موقعك لاكتشاف الأماكن القريبة المتاحة على منصتنا والتي تتوافق مع معايير البحث الخاصة بك'",
+  "goToSettingsEnableLocation": "اذهب إلى الإعدادات وفعًل خدمة الموقع.",
+  "ok": "حسناً",
+  "goToAppEnableLocationAndroid": "اذهب إلى الإعدادات > التطبيقات > 'App Name' > الأذونات.\nوفعًل خدمة الموقع.",
+  "goToAppEnableLocationIos": "اذهب إلى الإعدادات > الخصوصية والأمان > خدمة الموقع > 'App Name'.\nوفعًل خدمة الموقع.",
+  "aboutUs": "عن التطبيق",
+  "solutionsNow": "Solutions Now",
+  "settings": "الإعدادات"
 }

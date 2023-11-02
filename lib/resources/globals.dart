@@ -1,4 +1,4 @@
-import 'package:start_up_workspace/models/auth_model.dart';
+import '../models/auth_model.dart';
 
 class Globals {
   Globals._();

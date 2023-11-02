@@ -1,17 +1,27 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:start_up_workspace/modules/auth/binding/auth_binding.dart';
-import 'package:start_up_workspace/modules/splash/binding/splash_binding.dart';
-import '../main.dart';
-import '../modules/auth/view/auth_view.dart';
-import '../modules/home/view/home_view.dart';
 
+import 'package:get/get.dart';
+
+import '../main.dart';
+
+import '../modules/auth/binding/auth_binding.dart';
+import '../modules/auth/view/auth_view.dart';
+import '../modules/connection_error/binding/connection_error_binding.dart';
+import '../modules/connection_error/view/connection_error_view.dart';
+import '../modules/home/binding/home_binding.dart';
+import '../modules/home/view/home_view.dart';
+import '../modules/settings/binding/settings_binding.dart';
+import '../modules/settings/view/settings_view.dart';
+import '../modules/splash/binding/splash_binding.dart';
 import '../modules/splash/view/splash_view.dart';
 
 class Routes {
-  static const String splashRoute = '/splashView';
-  static const String authRoute = '/authView';
-  static const String homeRoute = '/homeView';
+  static const String unDefinedRoute = '/NotFoundView';
+  static const String splashRoute = '/SplashView';
+  static const String authRoute = '/AuthView';
+  static const String homeRoute = '/HomeView';
+  static const String connectionErrorRoute = '/ConnectionErrorView';
+  static const String settingsRoute = '/SettingsView';
 }
 
 class RouteGenerator {
@@ -29,7 +39,18 @@ class RouteGenerator {
       ),
       GetPage(
         name: Routes.homeRoute,
-        page: () => const HomeView(),
+        page: () => HomeView(),
+        binding: HomeBinding(),
+      ),
+      GetPage(
+        name: Routes.connectionErrorRoute,
+        page: () => ConnectionErrorView(),
+        binding: ConnectionErrorBinding(),
+      ),
+      GetPage(
+        name: Routes.settingsRoute,
+        page: () => SettingsView(),
+        binding: SettingsBinding(),
       ),
     ];
   }
