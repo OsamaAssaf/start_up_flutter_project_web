@@ -15,7 +15,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_localizations:
     sdk: flutter
-  intl: ^0.17.0
+  intl: ^0.18.1
   get: ^4.6.5
   shared_preferences: ^2.1.1
   http: ^0.13.6
