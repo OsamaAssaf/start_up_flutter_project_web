@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -280,6 +281,54 @@ class Components {
         //   size: 37.0,
         // ),
         );
+  }
+
+  static void showAlertDialog({
+    required String title,
+    Widget? content,
+    List<Widget>? actions,
+  }) {
+    Get.dialog(
+      BackdropFilter(
+        filter: ImageFilter.blur(
+          sigmaX: 2.0,
+          sigmaY: 2.0,
+        ),
+        child: AlertDialog(
+          title: Text(
+            title,
+            style: theme.textTheme.titleLarge!.copyWith(
+              color: customTheme.black,
+            ),
+          ),
+          content: content,
+          actions: actions ??
+              [
+                OutlinedButton(
+                  onPressed: () {
+                    Get.back();
+                  },
+                  style: OutlinedButton.styleFrom(
+                    side: BorderSide(
+                      color: theme.colorScheme.primary,
+                      width: 1.0,
+                    ),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
+                  ),
+                  child: Text(
+                    localizations.okay,
+                    style: theme.textTheme.titleLarge,
+                  ),
+                ),
+              ],
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(8.0),
+          ),
+        ),
+      ),
+    );
   }
 }
 

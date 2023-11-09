@@ -8,6 +8,13 @@ class ConstantsManager {
   static const double appbarHeight = 50.0;
   static const Duration timedOutDuration = Duration(seconds: 15);
   static const String timedOutErrorException = 'timedOutError';
+  static const String googlePlayLink =
+      'https://play.google.com/store/apps/details?id=com.tech_jo.the_relax';
+  static const String appStoreLink =
+      'http://apps.apple.com/<country>/app/<app–name>/id<store-ID>';
+  static const String shareText =
+      'Introducing \'The Relax\' app – your pocket companion for mental wellness. If you or someone you care about could use support, download now from Google Play and the App Store.\nAndroid Edition: $googlePlayLink\nIOS Edition: $appStoreLink';
+  static const String termsAndConditionsUrl = 'https://google.com';
 }
 
 class DotenvManager {

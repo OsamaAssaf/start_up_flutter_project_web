@@ -99,8 +99,10 @@ class Validators {
     return null;
   }
 
-
-
-
-
+  static String? validateFeedback(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'pleaseEnterYourFeedback';
+    }
+    return null;
+  }
 }
