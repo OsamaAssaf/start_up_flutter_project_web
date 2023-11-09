@@ -103,10 +103,10 @@ flutter:
     - .env
     - assets/images/
     - assets/icons/
+    - assets/fonts/
     # - assets/gifs/
     # - assets/sounds/
     # - assets/videos/
-    - assets/fonts/
 
   fonts:
     - family: Poppins
