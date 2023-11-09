@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:start_up_workspace/resources/assets_manager.dart';
-import '../../../resources/routes_manager.dart';
 
+import 'package:get/get.dart';
+
+import 'package:start_up_workspace/resources/assets_manager.dart';
 import '../../../main.dart';
+import '../../../resources/routes_manager.dart';
 
 class HomeDrawer extends StatelessWidget {
   const HomeDrawer({super.key});

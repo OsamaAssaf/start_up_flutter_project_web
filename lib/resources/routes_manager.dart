@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../main.dart';
-
 import '../modules/auth/binding/auth_binding.dart';
 import '../modules/auth/view/auth_view.dart';
 import '../modules/connection_error/binding/connection_error_binding.dart';
