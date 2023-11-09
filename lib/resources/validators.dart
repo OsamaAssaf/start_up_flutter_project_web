@@ -1,49 +1,58 @@
-class Validator {
-  String? emailValid(String email) {
-    RegExp regex =
-        RegExp(r'^[\w-]+(\.[\w-]+)*@([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,7}$');
-    if (email.isEmpty) {
-      return 'Please enter email';
-    } else {
-      if (!regex.hasMatch(email)) {
-        return 'Please enter correct email';
-      } else {
-        return null;
-      }
+import '../main.dart';
+
+class Validators {
+  static String? validateEmail(String? value) {
+    RegExp regex = RegExp(r'^[\w-]+(\.[\w-]+)*@([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,7}$');
+    if (value == null || value.isEmpty) {
+      return localizations.pleaseEnterEmail;
     }
+    if (!regex.hasMatch(value)) {
+      return localizations.invalidEmail;
+    }
+    return null;
   }
 
-  String? validatePassword(String pass) {
+  static String? validatePassword(String? value) {
     final uppercasePattern = RegExp(r'(?=.*[A-Z])');
     final lowercasePattern = RegExp(r'(?=.*[a-z])');
     final numberPattern = RegExp(r'(?=.*[0-9])');
     final symbolPattern = RegExp(r'(?=.*?[!@#\$&*~])');
-    //RegExp regex =RegExp(r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$');
-    if (uppercasePattern.hasMatch(pass) && lowercasePattern.hasMatch(pass)) {
-      return 'password must contain at least one uppercase and one lowercase letter';
-    } else if (numberPattern.hasMatch(pass)) {
-      return 'password must contain at least one number';
-    } else if (symbolPattern.hasMatch(pass)) {
-      return 'password must contain at least one symbol';
-    } else if (pass.length < 6) {
-      return 'Must be equal or more  than 6 charater';
-    }else if (pass.isEmpty) {
-      return 'Please enter password';
-    } else {
-        return null;
+    if (value == null || value.isEmpty) {
+      return localizations.pleaseEnterPassword;
     }
+    if (uppercasePattern.hasMatch(value) && lowercasePattern.hasMatch(value)) {
+      return localizations.passwordMustContainUpperAndLower;
+    }
+    if (numberPattern.hasMatch(value)) {
+      return localizations.passwordMustContainNumber;
+    }
+    if (symbolPattern.hasMatch(value)) {
+      return localizations.passwordMustContainSymbol;
+    }
+    if (value.length < 8) {
+      return localizations.passwordMustBeMoreThatEight;
+    }
+    return null;
   }
 
-  String? validatePhone(String phone) {
-    RegExp regex = RegExp(r'^\+?[0-9]{8,}$');
-    if (phone.isEmpty) {
-      return 'Please enter phone';
-    } else {
-      if (!regex.hasMatch(phone)) {
-        return 'Please enter correct phone';
-      } else {
-        return null;
-      }
+  static String? validateConfirmPassword(String? value, String password) {
+    if (value == null || value.isEmpty) {
+      return localizations.pleaseEnterConfirmPassword;
     }
+    if (value != password) {
+      return localizations.passwordDoesNotMatch;
+    }
+    return null;
+  }
+
+  static String? validatePhone(String? value) {
+    RegExp regex = RegExp(r'^\+?[0-9]{8,}$');
+    if (value == null || value.isEmpty) {
+      return localizations.pleaseEnterPhone;
+    }
+    if (!regex.hasMatch(value)) {
+      return localizations.invalidPhoneNumber;
+    }
+    return null;
   }
 }
