@@ -1,12 +1,12 @@
 name: start_up_workspace
 description: A new Flutter project.
 
-publish_to: 'none'
+publish_to: "none"
 
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.0.0 <4.0.0'
+  sdk: ">=3.0.0 <4.0.0"
 
 dependencies:
   flutter:
@@ -18,7 +18,7 @@ dependencies:
   intl: ^0.18.0
   get: ^4.6.6
   shared_preferences: ^2.2.0
-  http: ^1.1.0 
+  http: ^1.1.0
   flutter_dotenv: ^5.1.0
   share_plus: ^7.2.1
   loading_plus: ^1.3.0
@@ -28,6 +28,7 @@ dependencies:
   awesome_notifications: ^0.8.2
   firebase_messaging: ^14.7.3
   package_info_plus: ^4.2.0
+  country_picker: ^2.0.20 #chick if use
   flutter_svg: ^2.0.9 #chick if use
   internet_connection_checker: ^1.0.0+1
   image_cropper: ^5.0.0 #chick if use
@@ -36,7 +37,6 @@ dependencies:
   upgrader: ^8.2.0
   shimmer: ^3.0.0 #chick if use
 
-
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -44,12 +44,12 @@ dev_dependencies:
   flutter_launcher_icons: ^0.13.1
   flutter_native_splash: ^2.3.5
 
-########## import_sorter ##########
+  ########## import_sorter ##########
   import_sorter: ^4.6.0
 import_sorter:
   emojis: false
   comments: false
-  
+
 # dart run import_sorter:main
 ########## import_sorter ##########
 
@@ -57,7 +57,7 @@ flutter_launcher_icons:
   android: "launcher_icon"
   ios: true
   image_path: "assets/icons/app_icon.png"
-#  remove_alpha_ios: true
+  #  remove_alpha_ios: true
   web:
     generate: true
     image_path: "assets/icons/app_icon.png"
@@ -107,7 +107,6 @@ flutter:
     # - assets/sounds/
     # - assets/videos/
     - assets/fonts/
-
 
   fonts:
     - family: Poppins

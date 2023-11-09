@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class ColorsManager {
   //* Light Theme Colors
   static Color primary = const Color(0xffED9728);
-  static const Color secondary = Color(0xff813DE8);
+  static const Color secondary = Color.fromARGB(255, 253, 184, 95);
   static Color background = const Color(0xffFFFFFF);
   static Color white = const Color(0xffFFFFFF);
   static Color black = const Color(0xff000000);

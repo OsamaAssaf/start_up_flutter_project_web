@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="56" height="19.933" viewBox="0 0 56 19.933">
+  <g id="Group_7065" data-name="Group 7065" transform="translate(-335 -1033)">
+    <g id="Icon_feather-skip-forward" data-name="Icon feather-skip-forward" transform="translate(368 1029.308)">
+      <path id="Path_11399" data-name="Path 11399"
+        d="M7.062,4.5a1.062,1.062,0,0,1,.664.233l10.625,8.5a1.062,1.062,0,0,1,0,1.659l-10.625,8.5A1.063,1.063,0,0,1,6,22.562v-17A1.063,1.063,0,0,1,7.062,4.5Zm8.924,9.563L8.125,7.773V20.352Z"
+        fill="#0084AC" />
+      <path id="Path_11400" data-name="Path 11400"
+        d="M28.063,23A1.062,1.062,0,0,1,27,21.938V7.063a1.063,1.063,0,0,1,2.125,0V21.938A1.062,1.062,0,0,1,28.063,23Z"
+        transform="translate(-6.125 -0.438)" fill="#0084AC" />
+    </g>
+    <text id="Skip" transform="translate(335 1048)" fill="#0084AC" font-size="14" font-family="SegoeUI, Segoe UI">
+      <tspan x="0" y="0">Skip</tspan>
+    </text>
+  </g>
+</svg>

@@ -96,12 +96,14 @@ class Components {
     return InternetConnectionChecker().hasConnection;
   }
 
-  static Future<CroppedFile?> cropImage({required String path, bool isLogo = false}) async {
+  static Future<CroppedFile?> cropImage(
+      {required String path, bool isLogo = false}) async {
     CroppedFile? croppedFile = await ImageCropper().cropImage(
       sourcePath: path,
       cropStyle: isLogo ? CropStyle.circle : CropStyle.rectangle,
       compressQuality: 100,
-      compressFormat: isLogo ? ImageCompressFormat.png : ImageCompressFormat.jpg,
+      compressFormat:
+          isLogo ? ImageCompressFormat.png : ImageCompressFormat.jpg,
       aspectRatio: isLogo
           ? const CropAspectRatio(ratioX: 1, ratioY: 1)
           : const CropAspectRatio(ratioX: 16, ratioY: 9),
@@ -124,7 +126,8 @@ class Components {
     return croppedFile;
   }
 
-  static Future<TimeOfDay?> timePicker(BuildContext context, {TimeOfDay? initialTime}) async {
+  static Future<TimeOfDay?> timePicker(BuildContext context,
+      {TimeOfDay? initialTime}) async {
     final TimeOfDay? time = await showTimePicker(
       context: context,
       initialTime: initialTime ?? const TimeOfDay(hour: 8, minute: 0),
@@ -245,9 +248,38 @@ class Components {
       showIgnore: false,
       showLater: false,
       canDismissDialog: false,
-      dialogStyle: Platform.isIOS ? UpgradeDialogStyle.cupertino : UpgradeDialogStyle.material,
+      dialogStyle: Platform.isIOS
+          ? UpgradeDialogStyle.cupertino
+          : UpgradeDialogStyle.material,
       durationUntilAlertAgain: const Duration(minutes: 1),
     );
+  }
+
+  static String getMobileNumberWithCountryCode({
+    required String phone,
+    required String countryCode,
+  }) {
+    String phoneWithoutZero = phone;
+    if (phoneWithoutZero[0] == '0') {
+      phoneWithoutZero = phoneWithoutZero.replaceFirst('0', '');
+    }
+    return '$countryCode$phoneWithoutZero';
+  }
+
+  static void commonErrorSnackBar() {
+    snackBar(
+      message: localizations.somethingWrongTryAgain,
+      snackBarStatus: SnackBarStatus.error,
+    );
+  }
+
+  static Center loadingWidget() {
+    return const Center(
+        // child: LoadingAnimationWidget.staggeredDotsWave(
+        //   color: theme.colorScheme.primary,
+        //   size: 37.0,
+        // ),
+        );
   }
 }
 

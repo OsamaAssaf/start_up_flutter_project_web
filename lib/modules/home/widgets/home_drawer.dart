@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../resources/assets_manager.dart';
+import 'package:start_up_workspace/resources/assets_manager.dart';
 import '../../../resources/routes_manager.dart';
 
 import '../../../main.dart';
@@ -19,7 +19,7 @@ class HomeDrawer extends StatelessWidget {
             accountName: Text(localizations.appName),
             accountEmail: const Text(''),
             currentAccountPicture: Image.asset(
-              IconsAssets.appIcon,
+              IconsManager.appIcon,
             ),
             currentAccountPictureSize: Size(width * 0.20, width * 0.20),
           ),
@@ -41,7 +41,7 @@ class HomeDrawer extends StatelessWidget {
               showAboutDialog(
                 context: context,
                 applicationIcon: Image.asset(
-                  IconsAssets.appIcon,
+                  IconsManager.appIcon,
                   width: width * 0.20,
                   height: width * 0.20,
                 ),

@@ -21,7 +21,8 @@ class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
   final List<Widget>? actions;
 
   @override
-  Size get preferredSize => const Size.fromHeight(ConstantsManager.appbarHeight);
+  Size get preferredSize =>
+      const Size.fromHeight(ConstantsManager.appbarHeight);
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +44,7 @@ class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
               icon: RotatedBox(
                 quarterTurns: Components.isEnglish() ? 0 : 2,
                 child: SvgPicture.asset(
-                  IconsAssets.arrowBackSvg,
+                  IconsManager.backButtonSvg,
                   height: 22.0,
                   width: 22.0,
                   colorFilter: ColorFilter.mode(

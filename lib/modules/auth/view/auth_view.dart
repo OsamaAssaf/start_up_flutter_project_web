@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:start_up_workspace/resources/assets_manager.dart';
 import 'package:upgrader/upgrader.dart';
 
 import '../../../main.dart';
-import '../../../resources/assets_manager.dart';
 import '../../../resources/components.dart';
 import '../controller/auth_controller.dart';
 
@@ -60,21 +60,25 @@ class AuthView extends StatelessWidget {
                                 height: 20,
                               ),
                               Padding(
-                                padding: const EdgeInsets.fromLTRB(15, 0, 0, 20),
+                                padding:
+                                    const EdgeInsets.fromLTRB(15, 0, 0, 20),
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     GetBuilder<AuthController>(
                                       builder: (controller) {
-                                        if (controller.authType == AuthType.login) {
+                                        if (controller.authType ==
+                                            AuthType.login) {
                                           return const SizedBox.shrink();
                                         }
                                         return Column(
-                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
                                           children: [
                                             Text(
                                               localizations.email,
-                                              style: theme.textTheme.displaySmall,
+                                              style:
+                                                  theme.textTheme.displaySmall,
                                             ),
                                             const SizedBox(
                                               height: 10,
@@ -110,7 +114,8 @@ class AuthView extends StatelessWidget {
                                       height: 20,
                                     ),
                                     Row(
-                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
                                       children: [
                                         FilledButton(
                                           onPressed: () {
@@ -126,7 +131,8 @@ class AuthView extends StatelessWidget {
                                       height: 12,
                                     ),
                                     Padding(
-                                      padding: const EdgeInsets.fromLTRB(35, 0, 0, 0),
+                                      padding: const EdgeInsets.fromLTRB(
+                                          35, 0, 0, 0),
                                       child: Row(
                                         children: [
                                           Text(
@@ -134,7 +140,8 @@ class AuthView extends StatelessWidget {
                                             style: theme.textTheme.bodySmall,
                                           ),
                                           TextButton(
-                                            onPressed: _authController.changeAuthType,
+                                            onPressed:
+                                                _authController.changeAuthType,
                                             child: Text(
                                               localizations.signUp,
                                             ),
@@ -152,7 +159,7 @@ class AuthView extends StatelessWidget {
                       Transform.translate(
                         offset: const Offset(0, -253),
                         child: Image.asset(
-                          IconsAssets.appIcon,
+                          IconsManager.appIcon,
                           width: width * 0.25,
                           height: width * 0.25,
                         ),

@@ -3,6 +3,8 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 class ConstantsManager {
   static const String arabicLangValue = 'ar';
   static const String englishLangValue = 'en';
+  static const int genderMaleValue = 1;
+  static const int genderFemaleValue = 2;
   static const double appbarHeight = 50.0;
   static const Duration timedOutDuration = Duration(seconds: 15);
   static const String timedOutErrorException = 'timedOutError';
