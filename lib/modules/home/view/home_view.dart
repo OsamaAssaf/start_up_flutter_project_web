@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:start_up_workspace/modules/home/widgets/drawer_home.dart';
 import 'package:upgrader/upgrader.dart';
 
 import '../../../resources/components.dart';
 import '../controller/home_controller.dart';
+import '../widgets/drawer_home.dart';
 
 class HomeView extends StatelessWidget {
   HomeView({super.key});

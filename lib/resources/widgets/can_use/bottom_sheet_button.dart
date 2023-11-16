@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
-import 'package:start_up_workspace/main.dart';
+import '../../../main.dart';
 
 class BottomSheetButton extends StatelessWidget {
   const BottomSheetButton({
@@ -34,18 +34,10 @@ class BottomSheetButton extends StatelessWidget {
         borderRadius: allBorder == true
             ? BorderRadius.circular(borderRadius)
             : BorderRadius.only(
-                topLeft: topBorder == true
-                    ? const Radius.circular(8.0)
-                    : Radius.zero,
-                topRight: topBorder == true
-                    ? const Radius.circular(8.0)
-                    : Radius.zero,
-                bottomLeft: bottomBorder == true
-                    ? const Radius.circular(8.0)
-                    : Radius.zero,
-                bottomRight: bottomBorder == true
-                    ? const Radius.circular(8.0)
-                    : Radius.zero,
+                topLeft: topBorder == true ? const Radius.circular(8.0) : Radius.zero,
+                topRight: topBorder == true ? const Radius.circular(8.0) : Radius.zero,
+                bottomLeft: bottomBorder == true ? const Radius.circular(8.0) : Radius.zero,
+                bottomRight: bottomBorder == true ? const Radius.circular(8.0) : Radius.zero,
               ),
       ),
       child: TextButton(

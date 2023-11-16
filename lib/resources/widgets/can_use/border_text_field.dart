@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import 'package:start_up_workspace/main.dart';
-import 'package:start_up_workspace/resources/components.dart';
+import '../../../main.dart';
+import '../../components.dart';
 
 class BorderTextField extends StatelessWidget {
   const BorderTextField({

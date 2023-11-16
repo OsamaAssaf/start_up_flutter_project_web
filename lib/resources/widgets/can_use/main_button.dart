@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:start_up_workspace/main.dart';
-import 'package:start_up_workspace/resources/components.dart';
+import '../../../main.dart';
+import '../../components.dart';
 
 class MainButton extends StatelessWidget {
   const MainButton({
@@ -66,9 +66,7 @@ class MainButton extends StatelessWidget {
             ),
             if (icon != null)
               Align(
-                alignment: Components.isEnglish()
-                    ? Alignment.centerRight
-                    : Alignment.centerLeft,
+                alignment: Components.isEnglish() ? Alignment.centerRight : Alignment.centerLeft,
                 child: Padding(
                   padding: const EdgeInsets.symmetric(
                     vertical: 8.0,

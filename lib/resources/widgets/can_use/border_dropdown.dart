@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_svg/flutter_svg.dart';
 
-import 'package:start_up_workspace/main.dart';
-import 'package:start_up_workspace/resources/assets_manager.dart';
-import 'package:start_up_workspace/resources/components.dart';
+import '../../../main.dart';
+import '../../assets_manager.dart';
+import '../../components.dart';
 
 class BorderDropdown extends StatelessWidget {
   const BorderDropdown({

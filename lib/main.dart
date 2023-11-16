@@ -15,8 +15,7 @@ import 'services/notification_service.dart';
 import 'services/shared_prefs_service.dart';
 
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
-final GlobalKey<ScaffoldMessengerState> scaffoldMessengerKey =
-    GlobalKey<ScaffoldMessengerState>();
+final GlobalKey<ScaffoldMessengerState> scaffoldMessengerKey = GlobalKey<ScaffoldMessengerState>();
 
 late AppLocalizations localizations;
 late ThemeData theme;
@@ -36,6 +35,7 @@ Future<void> main() async {
     ],
   );
   LoadingPlus.instance.init(navigatorKey);
+  MasterFunctionsService.instance.initSystemUiStyle();
   runApp(const MyApp());
 }
 

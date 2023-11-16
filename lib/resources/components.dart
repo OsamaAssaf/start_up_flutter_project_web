@@ -1,5 +1,4 @@
 import 'dart:io';
-import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -65,6 +64,31 @@ class Components {
     );
   }
 
+  static Future<void> showAdaptiveDialog({
+    required BuildContext context,
+    Widget? title,
+    Widget? content,
+    List<Widget>? actions,
+  }) async {
+    await showDialog(
+      context: context,
+      builder: (ctx) {
+        if (Platform.isIOS) {
+          return CupertinoAlertDialog(
+            title: title,
+            content: content,
+            actions: actions ?? [],
+          );
+        }
+        return AlertDialog(
+          title: title,
+          content: content,
+          actions: actions,
+        );
+      },
+    );
+  }
+
   static void showLoading() {
     LoadingPlus.instance.showCustom(
       child: const Center(
@@ -75,6 +99,12 @@ class Components {
 
   static void dismissLoading() {
     LoadingPlus.instance.dismiss();
+  }
+
+  static Center loadingWidget() {
+    return const Center(
+      child: CircularProgressIndicator(),
+    );
   }
 
   static bool isEnglish() {
@@ -97,14 +127,12 @@ class Components {
     return InternetConnectionChecker().hasConnection;
   }
 
-  static Future<CroppedFile?> cropImage(
-      {required String path, bool isLogo = false}) async {
+  static Future<CroppedFile?> cropImage({required String path, bool isLogo = false}) async {
     CroppedFile? croppedFile = await ImageCropper().cropImage(
       sourcePath: path,
       cropStyle: isLogo ? CropStyle.circle : CropStyle.rectangle,
       compressQuality: 100,
-      compressFormat:
-          isLogo ? ImageCompressFormat.png : ImageCompressFormat.jpg,
+      compressFormat: isLogo ? ImageCompressFormat.png : ImageCompressFormat.jpg,
       aspectRatio: isLogo
           ? const CropAspectRatio(ratioX: 1, ratioY: 1)
           : const CropAspectRatio(ratioX: 16, ratioY: 9),
@@ -127,8 +155,7 @@ class Components {
     return croppedFile;
   }
 
-  static Future<TimeOfDay?> timePicker(BuildContext context,
-      {TimeOfDay? initialTime}) async {
+  static Future<TimeOfDay?> timePicker(BuildContext context, {TimeOfDay? initialTime}) async {
     final TimeOfDay? time = await showTimePicker(
       context: context,
       initialTime: initialTime ?? const TimeOfDay(hour: 8, minute: 0),
@@ -213,31 +240,6 @@ class Components {
     return dateTime;
   }
 
-  static Future<void> showAdaptiveDialog({
-    required BuildContext context,
-    Widget? title,
-    Widget? content,
-    List<Widget>? actions,
-  }) async {
-    await showDialog(
-      context: context,
-      builder: (ctx) {
-        if (Platform.isIOS) {
-          return CupertinoAlertDialog(
-            title: title,
-            content: content,
-            actions: actions ?? [],
-          );
-        }
-        return AlertDialog(
-          title: title,
-          content: content,
-          actions: actions,
-        );
-      },
-    );
-  }
-
   static Upgrader upgrader() {
     return Upgrader(
       messages: UpgraderMessages(
@@ -249,87 +251,21 @@ class Components {
       showIgnore: false,
       showLater: false,
       canDismissDialog: false,
-      dialogStyle: Platform.isIOS
-          ? UpgradeDialogStyle.cupertino
-          : UpgradeDialogStyle.material,
+      dialogStyle: Platform.isIOS ? UpgradeDialogStyle.cupertino : UpgradeDialogStyle.material,
       durationUntilAlertAgain: const Duration(minutes: 1),
     );
   }
 
-  static String getMobileNumberWithCountryCode({
-    required String phone,
-    required String countryCode,
-  }) {
-    String phoneWithoutZero = phone;
-    if (phoneWithoutZero[0] == '0') {
-      phoneWithoutZero = phoneWithoutZero.replaceFirst('0', '');
-    }
-    return '$countryCode$phoneWithoutZero';
-  }
-
-  static void commonErrorSnackBar() {
-    snackBar(
-      message: localizations.somethingWrongTryAgain,
-      snackBarStatus: SnackBarStatus.error,
-    );
-  }
-
-  static Center loadingWidget() {
-    return const Center(
-        // child: LoadingAnimationWidget.staggeredDotsWave(
-        //   color: theme.colorScheme.primary,
-        //   size: 37.0,
-        // ),
-        );
-  }
-
-  static void showAlertDialog({
-    required String title,
-    Widget? content,
-    List<Widget>? actions,
-  }) {
-    Get.dialog(
-      BackdropFilter(
-        filter: ImageFilter.blur(
-          sigmaX: 2.0,
-          sigmaY: 2.0,
-        ),
-        child: AlertDialog(
-          title: Text(
-            title,
-            style: theme.textTheme.titleLarge!.copyWith(
-              color: customTheme.black,
-            ),
-          ),
-          content: content,
-          actions: actions ??
-              [
-                OutlinedButton(
-                  onPressed: () {
-                    Get.back();
-                  },
-                  style: OutlinedButton.styleFrom(
-                    side: BorderSide(
-                      color: theme.colorScheme.primary,
-                      width: 1.0,
-                    ),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8.0),
-                    ),
-                  ),
-                  child: Text(
-                    localizations.okay,
-                    style: theme.textTheme.titleLarge,
-                  ),
-                ),
-              ],
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(8.0),
-          ),
-        ),
-      ),
-    );
-  }
+  // static String getMobileNumberWithCountryCode({
+  //   required String phone,
+  //   required String countryCode,
+  // }) {
+  //   String phoneWithoutZero = phone;
+  //   if (phoneWithoutZero[0] == '0') {
+  //     phoneWithoutZero = phoneWithoutZero.replaceFirst('0', '');
+  //   }
+  //   return '$countryCode$phoneWithoutZero';
+  // }
 }
 
 enum SnackBarStatus {

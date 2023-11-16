@@ -1,6 +1,7 @@
 import 'package:http/http.dart' as http;
 
 import '../resources/constants_manager.dart';
+import '../resources/exception_manager.dart';
 
 class ApiServices {
   static Future<http.Response> get(String subLink) async {
@@ -10,9 +11,9 @@ class ApiServices {
       Uri.parse(url),
     )
         .timeout(
-      ConstantsManager.timedOutDuration,
+      ExceptionManager.timedOutDuration,
       onTimeout: () {
-        return http.Response(ConstantsManager.timedOutErrorException, 408);
+        return http.Response(ExceptionManager.timedOutErrorException, 408);
       },
     );
     return response;
@@ -29,9 +30,9 @@ class ApiServices {
       body: body,
     )
         .timeout(
-      ConstantsManager.timedOutDuration,
+      ExceptionManager.timedOutDuration,
       onTimeout: () {
-        return http.Response(ConstantsManager.timedOutErrorException, 408);
+        return http.Response(ExceptionManager.timedOutErrorException, 408);
       },
     );
     return response;
@@ -48,9 +49,9 @@ class ApiServices {
       body: body,
     )
         .timeout(
-      ConstantsManager.timedOutDuration,
+      ExceptionManager.timedOutDuration,
       onTimeout: () {
-        return http.Response(ConstantsManager.timedOutErrorException, 408);
+        return http.Response(ExceptionManager.timedOutErrorException, 408);
       },
     );
     return response;
@@ -63,9 +64,9 @@ class ApiServices {
       Uri.parse(url),
     )
         .timeout(
-      ConstantsManager.timedOutDuration,
+      ExceptionManager.timedOutDuration,
       onTimeout: () {
-        return http.Response(ConstantsManager.timedOutErrorException, 408);
+        return http.Response(ExceptionManager.timedOutErrorException, 408);
       },
     );
     return response;

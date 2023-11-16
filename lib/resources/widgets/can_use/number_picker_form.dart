@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:start_up_workspace/main.dart';
-import 'package:start_up_workspace/resources/components.dart';
+import '../../../main.dart';
+import '../../components.dart';
 
 class NumberPickerForm extends StatelessWidget {
   const NumberPickerForm({

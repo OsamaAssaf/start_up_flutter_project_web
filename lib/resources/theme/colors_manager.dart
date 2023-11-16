@@ -18,7 +18,7 @@ class ColorsManager {
 
   //* Dark Theme Colors
   static Color darkPrimary = const Color(0xffED9728);
-  static const Color darkecondary = Color.fromARGB(255, 253, 184, 95);
+  static const Color darkSecondary = Color.fromARGB(255, 253, 184, 95);
   static Color darkBackground = const Color(0xff1F1F1F);
   static Color darkWhite = const Color(0xff000000);
   static Color darkBlack = const Color(0xffFFFFFF);

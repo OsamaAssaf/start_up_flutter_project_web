@@ -5,14 +5,14 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:in_app_review/in_app_review.dart';
 import 'package:share_plus/share_plus.dart';
-import 'package:start_up_workspace/main.dart';
-import 'package:start_up_workspace/resources/assets_manager.dart';
-import 'package:start_up_workspace/resources/validators.dart';
-import 'package:start_up_workspace/resources/widgets/can_use/underline_text_field.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../../../main.dart';
+import '../../../resources/assets_manager.dart';
 import '../../../resources/components.dart';
 import '../../../resources/constants_manager.dart';
+import '../../../resources/validators.dart';
+import '../../../resources/widgets/can_use/underline_text_field.dart';
 
 class DrawerHome extends StatelessWidget {
   const DrawerHome({Key? key}) : super(key: key);
@@ -174,7 +174,9 @@ class DrawerHome extends StatelessWidget {
                   Icons.logout_outlined,
                   color: customTheme.black,
                 ),
-                onTap: logout,
+                onTap: () {
+                  logoutDialog(context);
+                },
               ),
             ],
           ),
@@ -251,7 +253,7 @@ class DrawerHome extends StatelessWidget {
                   minLines: 1,
                   maxLines: 5,
                   hint: localizations.writeHere,
-                  validator: Validators.validateFeedback,
+                  validator: Validators.validateNotEmpty,
                 ),
               ),
               const SizedBox(height: 8.0),
@@ -313,50 +315,37 @@ class DrawerHome extends StatelessWidget {
     }
   }
 
-  Future<void> logout() async {
-    Components.showAlertDialog(
-      title: localizations.logOut,
-      content: Text(
-        localizations.areYouSureLogOut,
-        style: theme.textTheme.titleMedium!.copyWith(
-          color: customTheme.error,
+  Future<void> logoutDialog(BuildContext context) async {
+    final Text title = Text(localizations.logOut);
+    final Text content = Text(
+      localizations.areYouSureLogOut,
+      style: theme.textTheme.titleMedium!.copyWith(
+        color: customTheme.error,
+      ),
+    );
+    final List<Widget> actions = [
+      TextButton(
+        onPressed: () {},
+        child: Text(
+          localizations.yes,
+          style: theme.textTheme.titleLarge,
         ),
       ),
-      actions: [
-        TextButton(
-          onPressed: () async {
-            // Get.offAllNamed(Routes.welcomeRoute);
-            // await SharedPrefs.instance.clearUserData();
-          },
-          style: OutlinedButton.styleFrom(
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(8.0),
-            ),
-          ),
-          child: Text(
-            localizations.yes,
-            style: theme.textTheme.titleLarge,
-          ),
+      FilledButton(
+        onPressed: () {
+          Get.back();
+        },
+        child: Text(
+          localizations.no,
+          style: theme.textTheme.titleLarge,
         ),
-        OutlinedButton(
-          onPressed: () {
-            Get.back();
-          },
-          style: OutlinedButton.styleFrom(
-            side: BorderSide(
-              color: theme.colorScheme.primary,
-              width: 1.0,
-            ),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(8.0),
-            ),
-          ),
-          child: Text(
-            localizations.no,
-            style: theme.textTheme.titleLarge,
-          ),
-        ),
-      ],
+      ),
+    ];
+    Components.showAdaptiveDialog(
+      context: context,
+      title: title,
+      content: content,
+      actions: actions,
     );
   }
 }
