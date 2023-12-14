@@ -1,7 +1,7 @@
 import 'package:http/http.dart' as http;
 
-import '../resources/constants_manager.dart';
-import '../resources/exception_manager.dart';
+import '../resources/managers/constants_manager.dart';
+import '../resources/managers/exception_manager.dart';
 
 class ApiServices {
   static Future<http.Response> get(String subLink) async {

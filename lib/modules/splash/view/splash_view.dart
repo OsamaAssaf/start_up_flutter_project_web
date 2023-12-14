@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
-import '../../../resources/assets_manager.dart';
+import '../../../resources/managers/assets_manager.dart';
 import '../controller/splash_controller.dart';
 
 class SplashView extends StatelessWidget {

@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../resources/components.dart';
-import '../../../resources/routes_manager.dart';
+import '../../../resources/managers/routes_manager.dart';
 
 class SplashController extends GetxController {
   @override

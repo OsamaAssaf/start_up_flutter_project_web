@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:upgrader/upgrader.dart';
 
 import '../../../main.dart';
-import '../../../resources/assets_manager.dart';
+import '../../../resources/managers/assets_manager.dart';
 import '../../../resources/components.dart';
 import '../controller/auth_controller.dart';
 

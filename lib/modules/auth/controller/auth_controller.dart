@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-import '../../../resources/routes_manager.dart';
+import '../../../resources/managers/routes_manager.dart';
 
 class AuthController extends GetxController {
   AuthType authType = AuthType.login;
