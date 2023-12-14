@@ -1,6 +1,7 @@
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 class ConstantsManager {
+  static const String appStoreId = 'appStoreId';
   static const String arabicLangValue = 'ar';
   static const String englishLangValue = 'en';
   static const int genderMaleValue = 1;
@@ -16,10 +17,11 @@ class ConstantsManager {
 }
 
 class DotenvManager {
-  static final String appStoreId = dotenv.env['APP_STORE_ID']!;
   static final String languagePrefsKey = dotenv.env['LANGUAGE_PREFS_KEY']!;
   static final String themeModePrefsKey = dotenv.env['THEME_MODE_PREFS_KEY']!;
   static final String isDarkThemePrefsKey = dotenv.env['IS_DARK_THEME_PREFS_KEY']!;
+  static final String isFirstTimePrefsKey = dotenv.env['IS_FIRST_TIME_PREFS_KEY']!;
+  static final String userModelPrefsKey = dotenv.env['USER_MODEL_TIME_PREFS_KEY']!;
 
   static final String _domain = dotenv.env['DOMAIN']!;
   static final String _mainApiPath = dotenv.env['API_PATH']!;

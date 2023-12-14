@@ -202,7 +202,7 @@ class DrawerHome extends StatelessWidget {
       final InAppReview inAppReview = InAppReview.instance;
 
       await inAppReview.openStoreListing(
-        appStoreId: DotenvManager.appStoreId,
+        appStoreId: ConstantsManager.appStoreId,
       );
       Components.dismissLoading();
     } catch (_) {

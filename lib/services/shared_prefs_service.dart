@@ -1,8 +1,11 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../main.dart';
+import '../models/user_model.dart';
 import '../resources/constants_manager.dart';
 
 class SharedPrefsService {
@@ -11,6 +14,19 @@ class SharedPrefsService {
 
   Future<void> init() async {
     sharedPreferences = await SharedPreferences.getInstance();
+  }
+
+  Future<void> saveUserModel(UserModel value) async {
+    await sharedPreferences.setString(DotenvManager.userModelPrefsKey, jsonEncode(value.toJson()));
+  }
+
+  UserModel? getUserModel() {
+    UserModel? userModel;
+    final String? userData = sharedPreferences.getString(DotenvManager.userModelPrefsKey);
+    if (userData != null) {
+      userModel = UserModel.fromJson(jsonDecode(userData));
+    }
+    return userModel;
   }
 
   Future<void> setLanguage(String value) async {
@@ -40,5 +56,13 @@ class SharedPrefsService {
         : mode == ThemeMode.light.toString()
             ? ThemeMode.light
             : ThemeMode.system;
+  }
+
+  Future<void> saveIsFirstTime(bool value) async {
+    await sharedPreferences.setBool(DotenvManager.isFirstTimePrefsKey, value);
+  }
+
+  bool getIsFirstTime() {
+    return sharedPreferences.getBool(DotenvManager.isFirstTimePrefsKey) ?? true;
   }
 }
