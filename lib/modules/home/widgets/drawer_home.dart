@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:in_app_review/in_app_review.dart';
 import 'package:share_plus/share_plus.dart';
+import 'package:start_up_workspace/resources/widgets/main_text_field.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../../main.dart';
@@ -12,7 +13,6 @@ import '../../../resources/assets_manager.dart';
 import '../../../resources/components.dart';
 import '../../../resources/constants_manager.dart';
 import '../../../resources/validators.dart';
-import '../../../resources/widgets/can_use/underline_text_field.dart';
 
 class DrawerHome extends StatelessWidget {
   const DrawerHome({Key? key}) : super(key: key);
@@ -248,7 +248,7 @@ class DrawerHome extends StatelessWidget {
               const SizedBox(height: 16.0),
               Form(
                 key: formKey,
-                child: UnderlineTextField(
+                child: MainTextField(
                   controller: feedbackController,
                   minLines: 1,
                   maxLines: 5,

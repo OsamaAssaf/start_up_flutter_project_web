@@ -34,6 +34,7 @@
   "passwordMustContainNumber": "يجب ان تحتوي كلمة المرور على الاقل رقما واحداً",
   "passwordMustContainSymbol": "يجب أن تحتوي كلمة المرور على رمز واحد على الأقل",
   "passwordMustContainUpperAndLower": "يجب أن تحتوي كلمة المرور على حرف واحد كبير وحرف صغير واحد على الأقل",
+  "phoneNumber": "رقم الهاتف",
   "pleaseCheckYourConnectionTryAgain": "يرجى التحقق من اتصالك وحاول مرة أخرى.",
   "pleaseEnterConfirmPassword": "الرجاء إدخال تأكيد كلمة المرور",
   "pleaseEnterEmail": "الرجاء إدخال البريد الالكتروني",
