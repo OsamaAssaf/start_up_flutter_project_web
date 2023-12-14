@@ -9,9 +9,9 @@ import 'package:start_up_workspace/resources/widgets/main_text_field.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../../main.dart';
-import '../../../resources/assets_manager.dart';
+import '../../../resources/managers/assets_manager.dart';
 import '../../../resources/components.dart';
-import '../../../resources/constants_manager.dart';
+import '../../../resources/managers/constants_manager.dart';
 import '../../../resources/validators.dart';
 
 class DrawerHome extends StatelessWidget {

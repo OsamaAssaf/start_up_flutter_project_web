@@ -6,7 +6,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import '../main.dart';
 import '../models/user_model.dart';
-import '../resources/constants_manager.dart';
+import '../resources/managers/constants_manager.dart';
 
 class SharedPrefsService {
   SharedPrefsService._();
