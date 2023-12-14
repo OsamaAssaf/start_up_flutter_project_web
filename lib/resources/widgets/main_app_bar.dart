@@ -10,11 +10,11 @@ import '../managers/constants_manager.dart';
 
 class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
   const MainAppBar({
-    Key? key,
+    super.key,
     required this.title,
     this.canBack = false,
     this.actions,
-  }) : super(key: key);
+  });
 
   final String title;
   final bool canBack;

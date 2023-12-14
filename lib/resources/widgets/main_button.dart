@@ -4,7 +4,7 @@ import '../../main.dart';
 
 class MainButton extends StatelessWidget {
   const MainButton({
-    Key? key,
+    super.key,
     this.title,
     this.titleWidget,
     required this.onPressed,
@@ -13,7 +13,7 @@ class MainButton extends StatelessWidget {
     this.buttonWidth,
     this.borderSide,
     this.elevation,
-  }) : super(key: key);
+  });
 
   final String? title;
   final Widget? titleWidget;
