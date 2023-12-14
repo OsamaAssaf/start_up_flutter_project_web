@@ -31,7 +31,7 @@ Future<void> main() async {
       SharedPrefsService.instance.init(),
       MasterFunctionsService.instance.initPackageInfo(),
       MasterFunctionsService.instance.initPreferredOrientations(),
-      NotificationService.initNotifications(),
+      NotificationService.instance.initNotifications(),
     ],
   );
   LoadingPlus.instance.init(navigatorKey);
@@ -50,7 +50,7 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      NotificationService.initListenersAndPermission();
+      NotificationService.instance.initListenersAndPermission();
     });
     super.initState();
   }

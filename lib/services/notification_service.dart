@@ -6,7 +6,9 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import '../resources/theme/colors_manager.dart';
 
 class NotificationService {
-  static Future<void> _initAwesomeNotifications() async {
+  NotificationService._();
+  static final NotificationService instance = NotificationService._();
+  Future<void> _initAwesomeNotifications() async {
     await AwesomeNotifications().initialize(
       'resource://drawable/app_icon',
       [
@@ -29,7 +31,7 @@ class NotificationService {
     );
   }
 
-  static Future<void> _setListeners() async {
+  Future<void> _setListeners() async {
     AwesomeNotifications().setListeners(
       onActionReceivedMethod: _onActionReceivedMethod,
       onNotificationCreatedMethod: (_) async {},
@@ -38,7 +40,7 @@ class NotificationService {
     );
   }
 
-  static Future<void> _checkPermission() async {
+  Future<void> _checkPermission() async {
     bool isAllowed = await AwesomeNotifications().isNotificationAllowed();
     if (isAllowed == false) {
       AwesomeNotifications().requestPermissionToSendNotifications();
@@ -46,9 +48,9 @@ class NotificationService {
   }
 
   @pragma('vm:entry-point')
-  static Future<void> _onActionReceivedMethod(ReceivedAction receivedAction) async {}
+  Future<void> _onActionReceivedMethod(ReceivedAction receivedAction) async {}
 
-  static Future<void> showNotification({
+  Future<void> showNotification({
     required String title,
     required String body,
     Map<String, dynamic>? payload,
@@ -67,7 +69,7 @@ class NotificationService {
     );
   }
 
-  static Future<void> _initFirebaseMessaging() async {
+  Future<void> _initFirebaseMessaging() async {
     FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
     Stream<RemoteMessage> onMessageOpenedAppStream = FirebaseMessaging.onMessageOpenedApp;
     onMessageOpenedAppStream.listen((RemoteMessage event) async {});
@@ -84,19 +86,19 @@ class NotificationService {
     );
   }
 
-  static Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {}
+  Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {}
 
-  static Future<RemoteMessage?> getInitialMessage() async {
+  Future<RemoteMessage?> getInitialMessage() async {
     RemoteMessage? message = await FirebaseMessaging.instance.getInitialMessage();
     return message;
   }
 
-  static Future<void> initNotifications() async {
+  Future<void> initNotifications() async {
     await _initAwesomeNotifications();
     await _initFirebaseMessaging();
   }
 
-  static Future<void> initListenersAndPermission() async {
+  Future<void> initListenersAndPermission() async {
     _setListeners();
     _checkPermission();
   }
