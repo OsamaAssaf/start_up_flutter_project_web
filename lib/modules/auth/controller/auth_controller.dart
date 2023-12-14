@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 
+import '../../../resources/enums.dart';
 import '../../../resources/managers/routes_manager.dart';
 
 class AuthController extends GetxController {
@@ -12,9 +13,4 @@ class AuthController extends GetxController {
   Future<void> submit() async {
     Get.offAllNamed(Routes.homeRoute);
   }
-}
-
-enum AuthType {
-  login,
-  signUp,
 }
