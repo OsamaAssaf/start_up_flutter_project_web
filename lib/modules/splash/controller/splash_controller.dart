@@ -1,23 +1,27 @@
 import 'dart:async';
 
+import 'package:flutter/material.dart';
+
 import 'package:get/get.dart';
-import 'package:start_up_workspace/resources/routes_manager.dart';
+
+import '../../../resources/components.dart';
+import '../../../resources/routes_manager.dart';
 
 class SplashController extends GetxController {
-  Timer? timer;
   @override
   void onInit() {
-    timer = Timer(const Duration(seconds: 2), () {
-      Get.toNamed(Routes.authRoute);
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      checkConnection();
     });
     super.onInit();
   }
 
-  @override
-  void onClose() {
-    if (timer != null) {
-      timer!.cancel();
+  Future<void> checkConnection() async {
+    final bool result = await Components.checkConnection();
+    if (result == true) {
+      Get.toNamed(Routes.authRoute);
+    } else {
+      Get.offAllNamed(Routes.connectionErrorRoute);
     }
-    super.onClose();
   }
 }

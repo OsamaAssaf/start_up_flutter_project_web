@@ -1,13 +1,5 @@
- import 'package:start_up_workspace/models/auth_model.dart';
+class Globals {
+  Globals._();
 
-class Global{
-
-  Global._();
-  static final Global instance = Global._();
-
-  AuthModel? authModel;
-
-  void chageOuthModel(AuthModel value) {
-    authModel = value;
-  }
+  static final Globals instance = Globals._();
 }

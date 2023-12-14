@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17">
+  <g id="Icon_feather-log-in" data-name="Icon feather-log-in" transform="translate(-3.5 -3.5)">
+    <path id="Path_3" data-name="Path 3" d="M26.056,20.5H22.5a.946.946,0,1,1,0-1.889h3.556a.758.758,0,0,0,.778-.735V6.123a.758.758,0,0,0-.778-.735H22.5a.973.973,0,0,1-1-.944.973.973,0,0,1,1-.944h3.556a2.707,2.707,0,0,1,2.778,2.623V17.877A2.707,2.707,0,0,1,26.056,20.5Z" transform="translate(-8.333)" fill="#fff"/>
+    <path id="Path_4" data-name="Path 4" d="M15,19.389a1.051,1.051,0,0,1-.707-.266.85.85,0,0,1,0-1.284l3.737-3.394L14.293,11.05a.85.85,0,0,1,0-1.284,1.073,1.073,0,0,1,1.414,0L20.152,13.8a.85.85,0,0,1,0,1.284l-4.444,4.036A1.051,1.051,0,0,1,15,19.389Z" transform="translate(-4.816 -2.444)" fill="#fff"/>
+    <path id="Path_5" data-name="Path 5" d="M15.167,19H4.5a1,1,0,0,1,0-2H15.167a1,1,0,0,1,0,2Z" transform="translate(0 -6)" fill="#fff"/>
+  </g>
+</svg>

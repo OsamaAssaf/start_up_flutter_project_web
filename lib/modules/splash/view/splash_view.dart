@@ -1,17 +1,29 @@
 import 'package:flutter/material.dart';
+
 import 'package:get/get.dart';
-import 'package:start_up_workspace/modules/splash/controller/splash_controller.dart';
+
+import '../../../resources/assets_manager.dart';
+import '../controller/splash_controller.dart';
 
 class SplashView extends StatelessWidget {
-   SplashView({super.key});
+  SplashView({super.key});
 
-  final SplashController _splashController = Get.find();
+  final SplashController splashController = Get.find();
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    final double width = MediaQuery.sizeOf(context).width;
+    return Scaffold(
       body: Center(
-        child: Text('Loading...'),
+        child: ConstrainedBox(
+          constraints: BoxConstraints(
+            maxWidth: width * 0.25,
+            maxHeight: width * 0.25,
+          ),
+          child: Image.asset(
+            IconsManager.appIcon,
+          ),
+        ),
       ),
     );
   }

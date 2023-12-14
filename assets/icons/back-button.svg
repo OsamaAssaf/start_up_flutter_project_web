@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="11.721" height="21" viewBox="0 0 11.721 21">
+  <g id="Back_button" data-name="Back button" transform="translate(1 1)">
+    <g id="Group_6835" data-name="Group 6835" transform="translate(-1 -1)">
+      <path id="Line_4" data-name="Line 4"
+        d="M.221,10.721A1.221,1.221,0,0,1-.642,8.636L8.636-.642a1.221,1.221,0,0,1,1.727,1.727L1.085,10.364A1.217,1.217,0,0,1,.221,10.721Z"
+        transform="translate(1 1)" fill="#0084AC" />
+      <path id="Line_5" data-name="Line 5"
+        d="M9.5,10.721a1.217,1.217,0,0,1-.864-.358L-.642,1.085A1.221,1.221,0,0,1,1.085-.642l9.279,9.279A1.221,1.221,0,0,1,9.5,10.721Z"
+        transform="translate(1 10.279)" fill="#0084AC" />
+    </g>
+  </g>
+</svg>
