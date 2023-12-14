@@ -34,6 +34,7 @@
   "passwordMustContainNumber": "Password must contain at least one number",
   "passwordMustContainSymbol": "Password must contain at least one symbol",
   "passwordMustContainUpperAndLower": "Password must contain at least one uppercase and one lowercase letter",
+  "phoneNumber": "Phone number",
   "pleaseCheckYourConnectionTryAgain": "Please check your connection try again.",
   "pleaseEnterConfirmPassword": "Please enter confirm password",
   "pleaseEnterEmail": "Please enter email",

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import '../../main.dart';
 import '../components.dart';
@@ -7,7 +8,7 @@ class MainTextField extends StatelessWidget {
   const MainTextField({
     Key? key,
     this.controller,
-    required this.hint,
+    this.hint,
     this.label,
     this.readOnly = false,
     this.keyboardType,
@@ -25,6 +26,7 @@ class MainTextField extends StatelessWidget {
     this.minLines,
     this.maxLines = 1,
     this.suffixIcon,
+    this.inputFormatters,
   }) : super(key: key);
 
   final TextEditingController? controller;
@@ -46,6 +48,7 @@ class MainTextField extends StatelessWidget {
   final EdgeInsetsGeometry padding;
   final int? minLines;
   final int? maxLines;
+  final List<TextInputFormatter>? inputFormatters;
 
   @override
   Widget build(BuildContext context) {
@@ -134,6 +137,7 @@ class MainTextField extends StatelessWidget {
             ),
           ),
         ),
+        inputFormatters: inputFormatters,
         validator: validator,
         onChanged: onChanged,
         onFieldSubmitted: onFieldSubmitted,
