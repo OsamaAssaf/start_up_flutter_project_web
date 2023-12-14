@@ -15,8 +15,8 @@ class ConnectionErrorController extends GetxController {
   void onInit() {
     WidgetsBinding.instance.addPostFrameCallback((_) async {
       Get.bottomSheet(
-        WillPopScope(
-          onWillPop: () async => false,
+        PopScope(
+          canPop: false,
           child: SizedBox(
             height: 280.0,
             width: Get.width,

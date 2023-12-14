@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
-import '../../../main.dart';
 import '../../../resources/assets_manager.dart';
-import '../../../resources/theme/custom_theme_data.dart';
 import '../controller/splash_controller.dart';
 
 class SplashView extends StatelessWidget {
@@ -14,8 +12,6 @@ class SplashView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    theme = Theme.of(context);
-    customTheme = theme.extension<CustomThemeData>()!;
     final double width = MediaQuery.sizeOf(context).width;
     return Scaffold(
       body: Center(

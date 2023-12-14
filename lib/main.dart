@@ -71,6 +71,11 @@ class _MyAppState extends State<MyApp> {
       themeMode: SharedPrefsService.instance.getThemeMode(),
       navigatorKey: navigatorKey,
       scaffoldMessengerKey: scaffoldMessengerKey,
+      builder: (BuildContext context, Widget? child) {
+        theme = Theme.of(context);
+        customTheme = theme.extension<CustomThemeData>()!;
+        return child!;
+      },
       initialRoute: Routes.splashRoute,
       getPages: RouteGenerator.getPages(),
       unknownRoute: GetPage(
