@@ -15,7 +15,7 @@ import '../../../resources/managers/constants_manager.dart';
 import '../../../resources/validators.dart';
 
 class DrawerHome extends StatelessWidget {
-  const DrawerHome({Key? key}) : super(key: key);
+  const DrawerHome({super.key});
 
   @override
   Widget build(BuildContext context) {
