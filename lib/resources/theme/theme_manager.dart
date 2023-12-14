@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../fonts_manager.dart';
+import '../managers/fonts_manager.dart';
 import 'colors_manager.dart';
 import 'custom_theme_data.dart';
 

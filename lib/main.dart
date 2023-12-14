@@ -7,7 +7,7 @@ import 'package:loading_plus/loading_plus.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'resources/routes_manager.dart';
+import 'resources/managers/routes_manager.dart';
 import 'resources/theme/custom_theme_data.dart';
 import 'resources/theme/theme_manager.dart';
 import 'services/master_functions_service.dart';

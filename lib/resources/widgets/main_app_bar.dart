@@ -4,9 +4,9 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
 import '../../main.dart';
-import '../assets_manager.dart';
+import '../managers/assets_manager.dart';
 import '../components.dart';
-import '../constants_manager.dart';
+import '../managers/constants_manager.dart';
 
 class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
   const MainAppBar({
@@ -21,8 +21,7 @@ class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
   final List<Widget>? actions;
 
   @override
-  Size get preferredSize =>
-      const Size.fromHeight(ConstantsManager.appbarHeight);
+  Size get preferredSize => const Size.fromHeight(ConstantsManager.appbarHeight);
 
   @override
   Widget build(BuildContext context) {

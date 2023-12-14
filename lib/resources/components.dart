@@ -11,7 +11,7 @@ import 'package:loading_plus/loading_plus.dart';
 import 'package:upgrader/upgrader.dart';
 
 import '../main.dart';
-import 'constants_manager.dart';
+import 'managers/constants_manager.dart';
 import 'theme/colors_manager.dart';
 
 class Components {
