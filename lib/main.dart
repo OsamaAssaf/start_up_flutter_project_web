@@ -67,7 +67,7 @@ class _MyAppState extends State<MyApp> {
       supportedLocales: AppLocalizations.supportedLocales,
       locale: Locale(SharedPrefsService.instance.getLanguage()),
       theme: ThemeManager.getLightTheme(),
-      darkTheme: ThemeManager.getDarkTheme(),
+      // darkTheme: ThemeManager.getDarkTheme(),
       themeMode: SharedPrefsService.instance.getThemeMode(),
       navigatorKey: navigatorKey,
       scaffoldMessengerKey: scaffoldMessengerKey,
