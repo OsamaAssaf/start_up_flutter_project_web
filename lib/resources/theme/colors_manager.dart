@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 class ColorsManager {
-  //* Light Theme Colors
   static Color primary = const Color(0xffED9728);
+  //* Light Theme Colors
+
   static const Color secondary = Color.fromARGB(255, 253, 184, 95);
   static Color background = const Color(0xffFFFFFF);
   static Color white = const Color(0xffFFFFFF);
@@ -29,7 +30,10 @@ class ColorsManager {
   // static const Color darkDivider = Color(0xff30363D);
   // static const Color darkTextField = Color(0xFF323337);
   // static const Color darkText = Color(0xFFE5E5E5); //chick if used
-  //
+  /// Light Theme Colors
+  /// Dark Theme Colors
+
+  /// Static Colors
   static const Color success = Color(0xFF4BB543);
   static const Color warning = Color(0xFFffcc00);
   static const Color error = Color(0xFFFF3333);
