@@ -7,6 +7,7 @@ import 'package:get/get.dart';
 
 import '../main.dart';
 import '../resources/components.dart';
+import '../resources/widgets/scale_text.dart';
 
 class LocationService {
   LocationService._();
@@ -24,15 +25,23 @@ class LocationService {
             return null;
           }
           if (context.mounted) {
-            final Text title = Text(localizations.locationPermissionDenied);
-            final Text content = Text(
-                '${localizations.locationServiceMessage}\n\n${Platform.isIOS ? localizations.goToAppEnableLocationIos : localizations.goToAppEnableLocationAndroid}');
+            final ScaleText title = ScaleText(
+              localizations.locationPermissionDenied,
+              isFromDialog: true,
+            );
+            final ScaleText content = ScaleText(
+              '${localizations.locationServiceMessage}\n\n${Platform.isIOS ? localizations.goToAppEnableLocationIos : localizations.goToAppEnableLocationAndroid}',
+              isFromDialog: true,
+            );
             final List<Widget> actions = [
               TextButton(
                 onPressed: () async {
                   Get.back();
                 },
-                child: Text(localizations.ok),
+                child: ScaleText(
+                  localizations.ok,
+                  isFromDialog: true,
+                ),
               ),
             ];
             Components.showAdaptiveDialog(
@@ -50,15 +59,23 @@ class LocationService {
       }
       if (permission == LocationPermission.deniedForever) {
         if (context.mounted) {
-          final Text title = Text(localizations.locationServiceDisabled);
-          final Text content = Text(
-              '${localizations.locationServiceMessage}\n\n${localizations.goToSettingsEnableLocation}');
+          final ScaleText title = ScaleText(
+            localizations.locationServiceDisabled,
+            isFromDialog: true,
+          );
+          final ScaleText content = ScaleText(
+            '${localizations.locationServiceMessage}\n\n${localizations.goToSettingsEnableLocation}',
+            isFromDialog: true,
+          );
           final List<Widget> actions = [
             TextButton(
               onPressed: () async {
                 Get.back();
               },
-              child: Text(localizations.ok),
+              child: ScaleText(
+                localizations.ok,
+                isFromDialog: true,
+              ),
             ),
           ];
           Components.showAdaptiveDialog(
@@ -74,15 +91,23 @@ class LocationService {
         serviceEnabled = await Geolocator.isLocationServiceEnabled();
         if (!serviceEnabled) {
           if (context.mounted) {
-            final Text title = Text(localizations.locationServiceDisabled);
-            final Text content = Text(
-                '${localizations.locationServiceMessage}\n\n${localizations.goToSettingsEnableLocation}');
+            final ScaleText title = ScaleText(
+              localizations.locationServiceDisabled,
+              isFromDialog: true,
+            );
+            final ScaleText content = ScaleText(
+              '${localizations.locationServiceMessage}\n\n${localizations.goToSettingsEnableLocation}',
+              isFromDialog: true,
+            );
             final List<Widget> actions = [
               TextButton(
                 onPressed: () async {
                   Get.back();
                 },
-                child: Text(localizations.ok),
+                child: ScaleText(
+                  localizations.ok,
+                  isFromDialog: true,
+                ),
               ),
             ];
             Components.showAdaptiveDialog(
