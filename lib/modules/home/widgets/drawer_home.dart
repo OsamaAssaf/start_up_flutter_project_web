@@ -5,12 +5,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:in_app_review/in_app_review.dart';
 import 'package:share_plus/share_plus.dart';
-import 'package:start_up_workspace/resources/widgets/main_text_field.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import 'package:start_up_workspace/resources/widgets/main_text_field.dart';
 import '../../../main.dart';
-import '../../../resources/managers/assets_manager.dart';
 import '../../../resources/components.dart';
+import '../../../resources/managers/assets_manager.dart';
 import '../../../resources/managers/constants_manager.dart';
 import '../../../resources/validators.dart';
 

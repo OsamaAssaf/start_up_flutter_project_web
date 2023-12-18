@@ -97,8 +97,8 @@ class MainTextField extends StatelessWidget {
           ),
           suffixIcon: Padding(
             padding: EdgeInsets.only(
-              right: Components.isEnglish() ? 8.0 : 0.0,
-              left: Components.isEnglish() ? 0.0 : 8.0,
+              right: Components.isRTL() ? 0.0 : 8.0,
+              left: Components.isRTL() ? 8.0 : 0.0,
             ),
             child: suffixIcon,
           ),

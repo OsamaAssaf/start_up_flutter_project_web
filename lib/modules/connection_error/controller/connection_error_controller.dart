@@ -5,8 +5,8 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
 import '../../../main.dart';
-import '../../../resources/managers/assets_manager.dart';
 import '../../../resources/components.dart';
+import '../../../resources/managers/assets_manager.dart';
 import '../../../resources/managers/routes_manager.dart';
 import '../../../resources/widgets/main_button.dart';
 
