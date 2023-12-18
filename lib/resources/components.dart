@@ -7,11 +7,11 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:image_cropper/image_cropper.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
+import 'package:intl/intl.dart' as intl;
 import 'package:loading_plus/loading_plus.dart';
 import 'package:upgrader/upgrader.dart';
 
 import '../main.dart';
-import 'managers/constants_manager.dart';
 import 'theme/colors_manager.dart';
 
 class Components {
@@ -107,19 +107,28 @@ class Components {
     );
   }
 
-  static bool isEnglish() {
-    return Get.locale!.languageCode == ConstantsManager.englishLangValue;
+  // static bool isEnglish() {
+  //   return Get.locale!.languageCode == ConstantsManager.englishLangValue;
+  // }
+
+  static bool isRTL() {
+    return intl.Bidi.isRtlLanguage(Get.locale!.languageCode);
   }
 
   static bool isDark() {
     return theme.colorScheme.brightness == Brightness.dark;
   }
 
-  static SystemUiOverlayStyle systemUiOverlayStyle({Color? statusBarColor}) {
+  static SystemUiOverlayStyle systemUiOverlayStyle({
+    Color? statusBarColor,
+    Brightness? statusBarBrightness,
+    Brightness? statusBarIconBrightness,
+  }) {
     return SystemUiOverlayStyle(
       statusBarColor: statusBarColor ?? theme.colorScheme.primary,
-      statusBarBrightness: isDark() ? Brightness.dark : Brightness.light,
-      statusBarIconBrightness: isDark() ? Brightness.dark : Brightness.light,
+      statusBarBrightness: statusBarBrightness ?? (isDark() ? Brightness.dark : Brightness.light),
+      statusBarIconBrightness:
+          statusBarIconBrightness ?? (isDark() ? Brightness.dark : Brightness.light),
     );
   }
 

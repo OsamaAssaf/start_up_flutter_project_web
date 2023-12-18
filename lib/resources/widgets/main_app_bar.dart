@@ -4,8 +4,8 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
 import '../../main.dart';
-import '../managers/assets_manager.dart';
 import '../components.dart';
+import '../managers/assets_manager.dart';
 import '../managers/constants_manager.dart';
 
 class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -41,7 +41,7 @@ class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
                 Get.back();
               },
               icon: RotatedBox(
-                quarterTurns: Components.isEnglish() ? 0 : 2,
+                quarterTurns: Components.isRTL() ? 2 : 0,
                 child: SvgPicture.asset(
                   IconsManager.backButtonSvg,
                   height: 22.0,
