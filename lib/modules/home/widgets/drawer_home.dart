@@ -13,6 +13,7 @@ import '../../../resources/components.dart';
 import '../../../resources/managers/assets_manager.dart';
 import '../../../resources/managers/constants_manager.dart';
 import '../../../resources/validators.dart';
+import '../../../resources/widgets/scale_text.dart';
 
 class DrawerHome extends StatelessWidget {
   const DrawerHome({super.key});
@@ -316,28 +317,34 @@ class DrawerHome extends StatelessWidget {
   }
 
   Future<void> logoutDialog(BuildContext context) async {
-    final Text title = Text(localizations.logOut);
-    final Text content = Text(
+    final ScaleText title = ScaleText(
+      localizations.logOut,
+      isFromDialog: true,
+    );
+    final ScaleText content = ScaleText(
       localizations.areYouSureLogOut,
       style: theme.textTheme.titleMedium!.copyWith(
         color: customTheme.error,
       ),
+      isFromDialog: true,
     );
     final List<Widget> actions = [
       TextButton(
         onPressed: () {},
-        child: Text(
+        child: ScaleText(
           localizations.yes,
           style: theme.textTheme.titleLarge,
+          isFromDialog: true,
         ),
       ),
       FilledButton(
         onPressed: () {
           Get.back();
         },
-        child: Text(
+        child: ScaleText(
           localizations.no,
           style: theme.textTheme.titleLarge,
+          isFromDialog: true,
         ),
       ),
     ];
