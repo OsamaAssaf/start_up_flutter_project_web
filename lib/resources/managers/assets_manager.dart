@@ -46,7 +46,3 @@ class ImagesManager {
   // static const String resetPasswordSvg = '$_imagesPath/reset-password.svg';
   // static const String welcomeSvg = '$_imagesPath/welcome.svg';
 }
-
-class SoundsManager {}
-
-class VideoManager {}
