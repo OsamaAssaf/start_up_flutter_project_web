@@ -107,10 +107,6 @@ class Components {
     );
   }
 
-  // static bool isEnglish() {
-  //   return Get.locale!.languageCode == ConstantsManager.englishLangValue;
-  // }
-
   static bool isRTL() {
     return intl.Bidi.isRtlLanguage(Get.locale!.languageCode);
   }
