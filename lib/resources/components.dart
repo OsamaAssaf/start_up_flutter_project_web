@@ -35,6 +35,7 @@ class Components {
         leftBarIndicatorColor = null;
         break;
     }
+    scaffoldMessengerKey.currentState!.hideCurrentSnackBar();
     scaffoldMessengerKey.currentState!.showSnackBar(
       SnackBar(
         content: Stack(
@@ -106,10 +107,6 @@ class Components {
       child: CircularProgressIndicator(),
     );
   }
-
-  // static bool isEnglish() {
-  //   return Get.locale!.languageCode == ConstantsManager.englishLangValue;
-  // }
 
   static bool isRTL() {
     return intl.Bidi.isRtlLanguage(Get.locale!.languageCode);
