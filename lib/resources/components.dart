@@ -35,6 +35,7 @@ class Components {
         leftBarIndicatorColor = null;
         break;
     }
+    scaffoldMessengerKey.currentState!.hideCurrentSnackBar();
     scaffoldMessengerKey.currentState!.showSnackBar(
       SnackBar(
         content: Stack(
