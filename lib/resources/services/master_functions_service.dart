@@ -4,8 +4,8 @@ import 'package:flutter/services.dart';
 
 import 'package:package_info_plus/package_info_plus.dart';
 
-import '../main.dart';
-import '../resources/theme/colors_manager.dart';
+import '../../main.dart';
+import '../theme/colors_manager.dart';
 import 'shared_prefs_service.dart';
 
 class MasterFunctionsService {

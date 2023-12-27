@@ -5,9 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
 
-import '../main.dart';
-import '../resources/components.dart';
-import '../resources/widgets/scale_text.dart';
+import '../../main.dart';
+import '../components.dart';
+import '../widgets/scale_text.dart';
 
 class LocationService {
   LocationService._();

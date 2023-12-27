@@ -13,6 +13,7 @@ import 'package:upgrader/upgrader.dart';
 
 import '../main.dart';
 import 'theme/colors_manager.dart';
+import 'widgets/scale_text.dart';
 
 class Components {
   static void snackBar({
@@ -38,24 +39,22 @@ class Components {
     scaffoldMessengerKey.currentState!.hideCurrentSnackBar();
     scaffoldMessengerKey.currentState!.showSnackBar(
       SnackBar(
-        content: Stack(
-          alignment: Alignment.center,
+        content: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Align(
-              alignment: AlignmentDirectional.centerStart,
-              child: Container(
-                height: 50.0,
-                width: 4.0,
-                color: leftBarIndicatorColor,
+            Container(
+              height: 50.0,
+              width: 4.0,
+              color: leftBarIndicatorColor,
+            ),
+            const SizedBox(width: 16.0),
+            Expanded(
+              child: ScaleText(
+                message,
+                maxLines: 2,
               ),
             ),
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                const SizedBox(width: 16.0),
-                Text(message),
-              ],
-            ),
+            const SizedBox(width: 8.0),
           ],
         ),
         padding: EdgeInsets.zero,

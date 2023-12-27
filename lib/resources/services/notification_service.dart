@@ -3,7 +3,7 @@ import 'dart:math' as math;
 import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 
-import '../resources/theme/colors_manager.dart';
+import '../../resources/theme/colors_manager.dart';
 
 class NotificationService {
   NotificationService._();
