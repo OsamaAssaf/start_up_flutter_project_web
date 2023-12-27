@@ -10,9 +10,9 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'resources/managers/routes_manager.dart';
 import 'resources/theme/custom_theme_data.dart';
 import 'resources/theme/theme_manager.dart';
-import 'services/master_functions_service.dart';
-import 'services/notification_service.dart';
-import 'services/shared_prefs_service.dart';
+import 'resources/services/master_functions_service.dart';
+import 'resources/services/notification_service.dart';
+import 'resources/services/shared_prefs_service.dart';
 
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 final GlobalKey<ScaffoldMessengerState> scaffoldMessengerKey = GlobalKey<ScaffoldMessengerState>();
