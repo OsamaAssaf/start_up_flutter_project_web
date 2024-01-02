@@ -37,6 +37,7 @@ dependencies:
   upgrader: ^8.4.0
   in_app_review: ^2.0.8
   shimmer: ^3.0.0 #chick if use
+  encrypt: ^5.0.3
 
 dependency_overrides:
   intl: ^0.18.1

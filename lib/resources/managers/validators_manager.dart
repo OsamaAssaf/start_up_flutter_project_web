@@ -1,8 +1,8 @@
-import '../main.dart';
+import '../../main.dart';
 
-class Validators {
+class ValidatorsManager {
   static String? validateEmail(String? value) {
-    RegExp regex = RegExp(r'^[\w-]+(\.[\w-]+)*@([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,7}$');
+    final RegExp regex = RegExp(r'^[\w-]+(\.[\w-]+)*@([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,7}$');
     if (value == null || value.isEmpty) {
       return localizations.pleaseEnterEmail;
     }
@@ -13,10 +13,10 @@ class Validators {
   }
 
   static String? validatePassword(String? value) {
-    final uppercasePattern = RegExp(r'(?=.*[A-Z])');
-    final lowercasePattern = RegExp(r'(?=.*[a-z])');
-    final numberPattern = RegExp(r'(?=.*[0-9])');
-    final symbolPattern = RegExp(r'(?=.*?[!@#\$&*~])');
+    final RegExp uppercasePattern = RegExp(r'(?=.*[A-Z])');
+    final RegExp lowercasePattern = RegExp(r'(?=.*[a-z])');
+    final RegExp numberPattern = RegExp(r'(?=.*[0-9])');
+    final RegExp symbolPattern = RegExp(r'(?=.*?[!@#\$&*~])');
     if (value == null || value.isEmpty) {
       return localizations.pleaseEnterPassword;
     }
@@ -46,7 +46,7 @@ class Validators {
   }
 
   static String? validatePhone(String? value) {
-    RegExp regex = RegExp(r'^\+?[0-9]{8,}$');
+    final RegExp regex = RegExp(r'^\+?[0-9]{8,}$');
     if (value == null || value.isEmpty) {
       return localizations.pleaseEnterPhone;
     }

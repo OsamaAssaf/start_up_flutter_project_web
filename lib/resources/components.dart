@@ -15,7 +15,7 @@ import '../main.dart';
 import 'theme/colors_manager.dart';
 import 'widgets/scale_text.dart';
 
-class Components {
+abstract class Components {
   static void snackBar({
     required String message,
     SnackBarStatus snackBarStatus = SnackBarStatus.warning,

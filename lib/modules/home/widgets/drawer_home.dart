@@ -12,7 +12,7 @@ import '../../../main.dart';
 import '../../../resources/components.dart';
 import '../../../resources/managers/assets_manager.dart';
 import '../../../resources/managers/constants_manager.dart';
-import '../../../resources/validators.dart';
+import '../../../resources/managers/validators_manager.dart';
 import '../../../resources/widgets/scale_text.dart';
 
 class DrawerHome extends StatelessWidget {
@@ -254,7 +254,7 @@ class DrawerHome extends StatelessWidget {
                   minLines: 1,
                   maxLines: 5,
                   hint: localizations.writeHere,
-                  validator: Validators.validateNotEmpty,
+                  validator: ValidatorsManager.validateNotEmpty,
                 ),
               ),
               const SizedBox(height: 8.0),

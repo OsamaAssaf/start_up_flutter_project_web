@@ -5,7 +5,7 @@ import 'package:upgrader/upgrader.dart';
 
 import '../../../main.dart';
 import '../../../resources/components.dart';
-import '../../../resources/enums.dart';
+import '../../../resources/enums/auth_type.dart';
 import '../../../resources/managers/assets_manager.dart';
 import '../controller/auth_controller.dart';
 
