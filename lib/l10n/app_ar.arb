@@ -44,6 +44,7 @@
   "retry": "أعد المحاولة",
   "send": "إرسال",
   "sendYourFeedback": "أرسل ملاحظاتك",
+  "serverNotReachable": "لم نتمكن من الوصول للخادم، يرجى التحقق من اتصالك بالإنترنت والمحاولة مرة أخرى.",
   "settings": "الإعدادات",
   "signUp": "تسجيل",
   "solutionsNow": "Solutions Now",

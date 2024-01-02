@@ -22,7 +22,7 @@ class DotenvManager {
   static final String isDarkThemePrefsKey = dotenv.env['IS_DARK_THEME_PREFS_KEY']!;
   static final String isFirstTimePrefsKey = dotenv.env['IS_FIRST_TIME_PREFS_KEY']!;
   static final String userModelPrefsKey = dotenv.env['USER_MODEL_TIME_PREFS_KEY']!;
-
+  static final String encryptionKey = dotenv.env['ENCRYPTION_KEY']!;
   static final String _domain = dotenv.env['DOMAIN']!;
   static final String _mainApiPath = dotenv.env['API_PATH']!;
   static final String apiPath = '$_domain/$_mainApiPath';

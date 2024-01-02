@@ -7,6 +7,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../../main.dart';
 import '../../models/user_model.dart';
 import '../../resources/managers/constants_manager.dart';
+import 'encrypt_service.dart';
 
 class SharedPrefsService {
   SharedPrefsService._();
@@ -17,16 +18,21 @@ class SharedPrefsService {
   }
 
   Future<void> saveUserModel(UserModel value) async {
-    await sharedPreferences.setString(DotenvManager.userModelPrefsKey, jsonEncode(value.toJson()));
+    final String userData = jsonEncode(value.toJson());
+    final String encryptedUserData = await EncryptionService.instance.encrypt(userData);
+    await sharedPreferences.setString(
+      DotenvManager.userModelPrefsKey,
+      encryptedUserData,
+    );
   }
 
-  UserModel? getUserModel() {
-    UserModel? userModel;
-    final String? userData = sharedPreferences.getString(DotenvManager.userModelPrefsKey);
-    if (userData != null) {
-      userModel = UserModel.fromJson(jsonDecode(userData));
-    }
-    return userModel;
+  Future<UserModel?> getUserModel() async {
+    final String? encryptedUserData = sharedPreferences.getString(DotenvManager.userModelPrefsKey);
+    if (encryptedUserData == null) return null;
+    final String userData = await EncryptionService.instance.decrypt(encryptedUserData);
+    return UserModel.fromJson(
+      jsonDecode(userData),
+    );
   }
 
   Future<void> setLanguage(String value) async {

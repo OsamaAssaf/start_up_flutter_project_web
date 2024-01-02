@@ -44,6 +44,7 @@
   "retry": "Retry",
   "send": "Send",
   "sendYourFeedback": "Send your feedback",
+  "serverNotReachable": "Server is not reachable, please verify your internet connection and try again.",
   "settings": "Settings",
   "signUp": "Sign Up",
   "solutionsNow": "Solutions Now",

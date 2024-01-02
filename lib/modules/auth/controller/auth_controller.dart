@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-import '../../../resources/enums.dart';
+import '../../../resources/enums/auth_type.dart';
 import '../../../resources/managers/routes_manager.dart';
 
 class AuthController extends GetxController {
