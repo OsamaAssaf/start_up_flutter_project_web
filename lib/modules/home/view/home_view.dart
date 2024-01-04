@@ -1,5 +1,3 @@
-import 'package:image_picker/image_picker.dart';
-
 import '../../../resources/helpers/all_imports.dart';
 
 class HomeView extends StatelessWidget {
