@@ -119,7 +119,10 @@ abstract class Components {
     // return InternetConnectionChecker().hasConnection;
   }
 
-  static Future<CroppedFile?> cropImage({required String path, bool isLogo = false}) async {
+  static Future<CroppedFile?> cropImage(BuildContext context,
+      {required String path, bool isLogo = false}) async {
+    final Size size = MediaQuery.sizeOf(context);
+    final int minSize = (min(size.width, size.height) * 0.5).toInt();
     CroppedFile? croppedFile = await ImageCropper().cropImage(
       sourcePath: path,
       cropStyle: isLogo ? CropStyle.circle : CropStyle.rectangle,
@@ -141,6 +144,13 @@ abstract class Components {
           resetAspectRatioEnabled: false,
           aspectRatioPickerButtonHidden: true,
           resetButtonHidden: true,
+        ),
+        WebUiSettings(
+          context: context,
+          boundary: CroppieBoundary(
+            height: minSize,
+            width: minSize,
+          ),
         ),
       ],
     );
