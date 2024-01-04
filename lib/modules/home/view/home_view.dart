@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:upgrader/upgrader.dart';
 
-import '../../../resources/components.dart';
 import '../controller/home_controller.dart';
 import '../widgets/drawer_home.dart';
 
@@ -13,14 +11,11 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return UpgradeAlert(
-      upgrader: Components.upgrader(),
-      child: Scaffold(
-        appBar: AppBar(
-          title: const Text('Home'),
-        ),
-        drawer: const DrawerHome(),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Home'),
       ),
+      drawer: const DrawerHome(),
     );
   }
 }

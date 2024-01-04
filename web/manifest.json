@@ -1,6 +1,6 @@
 {
-    "name": "start_up_workspace",
-    "short_name": "start_up_workspace",
+    "name": "start_up_workspace_web",
+    "short_name": "start_up_workspace_web",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#hexcode",

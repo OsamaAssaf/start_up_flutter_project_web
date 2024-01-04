@@ -3,15 +3,15 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:in_app_review/in_app_review.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import 'package:start_up_workspace/resources/widgets/main_text_field.dart';
+import 'package:start_up_workspace_web/resources/widgets/main_text_field.dart';
 import '../../../main.dart';
 import '../../../resources/components.dart';
 import '../../../resources/managers/assets_manager.dart';
 import '../../../resources/managers/constants_manager.dart';
+import '../../../resources/managers/routes_manager.dart';
 import '../../../resources/managers/validators_manager.dart';
 import '../../../resources/widgets/scale_text.dart';
 
@@ -20,12 +20,14 @@ class DrawerHome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final double width = MediaQuery.sizeOf(context).width;
     return BackdropFilter(
       filter: ImageFilter.blur(sigmaX: 2.0, sigmaY: 2.0),
       child: Drawer(
         surfaceTintColor: Colors.transparent,
         backgroundColor: theme.colorScheme.background,
         width: 260.0,
+        semanticLabel: 'Navigation Menu',
         child: SingleChildScrollView(
           child: Column(
             children: [
@@ -35,14 +37,17 @@ class DrawerHome extends StatelessWidget {
                   color: theme.colorScheme.primary,
                 ),
                 margin: const EdgeInsets.all(0.0),
-                accountName: GestureDetector(
-                  onTap: () {
-                    // Get.toNamed(Routes.profileRoute);
-                  },
-                  child: Text(
-                    'User Name',
-                    style: theme.textTheme.titleLarge!.copyWith(
-                      color: theme.colorScheme.background,
+                accountName: MouseRegion(
+                  cursor: SystemMouseCursors.click,
+                  child: GestureDetector(
+                    onTap: () {
+                      // Get.toNamed(Routes.profileRoute);
+                    },
+                    child: Text(
+                      'User Name',
+                      style: theme.textTheme.titleLarge!.copyWith(
+                        color: theme.colorScheme.background,
+                      ),
                     ),
                   ),
                 ),
@@ -88,23 +93,33 @@ class DrawerHome extends StatelessWidget {
                   color: customTheme.black,
                 ),
                 onTap: () {
-                  // Get.toNamed(Routes.aboutUsRoute);
+                  showAboutDialog(
+                    context: context,
+                    applicationIcon: Image.asset(
+                      IconsManager.appIcon,
+                      width: width * 0.20,
+                      height: width * 0.20,
+                    ),
+                    applicationName: localizations.appName,
+                    applicationVersion: packageInfo.version,
+                    applicationLegalese: localizations.solutionsNow,
+                  );
                 },
               ),
-              ListTile(
-                title: Text(
-                  localizations.rateApp,
-                  style: theme.textTheme.titleLarge!.copyWith(
-                    color: customTheme.black,
-                    fontWeight: FontWeight.normal,
-                  ),
-                ),
-                leading: Icon(
-                  Icons.star_border_rounded,
-                  color: customTheme.black,
-                ),
-                onTap: rateApp,
-              ),
+              // ListTile(
+              //   title: Text(
+              //     localizations.rateApp,
+              //     style: theme.textTheme.titleLarge!.copyWith(
+              //       color: customTheme.black,
+              //       fontWeight: FontWeight.normal,
+              //     ),
+              //   ),
+              //   leading: Icon(
+              //     Icons.star_border_rounded,
+              //     color: customTheme.black,
+              //   ),
+              //   onTap: rateApp,
+              // ),
               ListTile(
                 title: Text(
                   localizations.inviteFriend,
@@ -117,7 +132,7 @@ class DrawerHome extends StatelessWidget {
                   Icons.share_outlined,
                   color: customTheme.black,
                 ),
-                onTap: shareApp,
+                onTap: _shareApp,
               ),
               ListTile(
                 title: Text(
@@ -131,7 +146,7 @@ class DrawerHome extends StatelessWidget {
                   Icons.feedback_outlined,
                   color: customTheme.black,
                 ),
-                onTap: sendFeedback,
+                onTap: _sendFeedback,
               ),
               ListTile(
                 title: Text(
@@ -145,7 +160,7 @@ class DrawerHome extends StatelessWidget {
                   Icons.privacy_tip_outlined,
                   color: customTheme.black,
                 ),
-                onTap: openTermsAndConditions,
+                onTap: _openTermsAndConditions,
               ),
               ListTile(
                 title: Text(
@@ -160,7 +175,7 @@ class DrawerHome extends StatelessWidget {
                   color: customTheme.black,
                 ),
                 onTap: () {
-                  // Get.toNamed(Routes.settingRoute);
+                  Get.toNamed(Routes.settingsRoute);
                 },
               ),
               ListTile(
@@ -176,7 +191,7 @@ class DrawerHome extends StatelessWidget {
                   color: customTheme.black,
                 ),
                 onTap: () {
-                  logoutDialog(context);
+                  _logoutDialog(context);
                 },
               ),
             ],
@@ -186,7 +201,7 @@ class DrawerHome extends StatelessWidget {
     );
   }
 
-  Future<void> shareApp() async {
+  Future<void> _shareApp() async {
     try {
       Components.showLoading();
       await Share.share(ConstantsManager.shareText);
@@ -197,22 +212,7 @@ class DrawerHome extends StatelessWidget {
     }
   }
 
-  Future<void> rateApp() async {
-    try {
-      Components.showLoading();
-      final InAppReview inAppReview = InAppReview.instance;
-
-      await inAppReview.openStoreListing(
-        appStoreId: ConstantsManager.appStoreId,
-      );
-      Components.dismissLoading();
-    } catch (_) {
-      Components.dismissLoading();
-      Components.snackBar(message: localizations.somethingWrongTryAgain);
-    }
-  }
-
-  Future<void> sendFeedback() async {
+  Future<void> _sendFeedback() async {
     final TextEditingController feedbackController = TextEditingController();
     final GlobalKey<FormState> formKey = GlobalKey<FormState>();
     Get.dialog(
@@ -302,7 +302,7 @@ class DrawerHome extends StatelessWidget {
     );
   }
 
-  Future<void> openTermsAndConditions() async {
+  Future<void> _openTermsAndConditions() async {
     try {
       Components.showLoading();
       await launchUrl(
@@ -316,7 +316,7 @@ class DrawerHome extends StatelessWidget {
     }
   }
 
-  Future<void> logoutDialog(BuildContext context) async {
+  Future<void> _logoutDialog(BuildContext context) async {
     final ScaleText title = ScaleText(
       localizations.logOut,
       isFromDialog: true,
@@ -330,7 +330,9 @@ class DrawerHome extends StatelessWidget {
     );
     final List<Widget> actions = [
       TextButton(
-        onPressed: () {},
+        onPressed: () {
+          Get.offAllNamed(Routes.splashRoute);
+        },
         child: ScaleText(
           localizations.yes,
           style: theme.textTheme.titleLarge,

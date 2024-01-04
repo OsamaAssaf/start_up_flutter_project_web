@@ -1,11 +1,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.start_up_workspace">
+    package="com.solutions_now.start_up_workspace_web">
 
     <uses-permission android:name="android.permission.VIBRATE"/>
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
 
    <application
-        android:label="start_up_workspace"
+        android:label="Start up Workspace Web"
         android:name="${applicationName}"
         android:icon="@mipmap/launcher_icon">
         <activity

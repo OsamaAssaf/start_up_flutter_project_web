@@ -9,7 +9,7 @@ class ConstantsManager {
 
   static const String appStoreId = 'appStoreId';
   static const String googlePlayLink =
-      'https://play.google.com/store/apps/details?id=com.example.start_up_workspace';
+      'https://play.google.com/store/apps/details?id=com.solutions_now.start_up_workspace_web';
   static const String appStoreLink = 'http://apps.apple.com/<country>/app/<app–name>/id<store-ID>';
   static const String shareText =
       'Introducing \'App Name\' app . If you or someone you care about could use support, download now from Google Play and the App Store.\nAndroid Edition: $googlePlayLink\nIOS Edition: $appStoreLink';

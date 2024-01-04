@@ -21,6 +21,15 @@ class Routes {
   static const String homeRoute = '/HomeView';
   static const String connectionErrorRoute = '/ConnectionErrorView';
   static const String settingsRoute = '/SettingsView';
+
+  static Map<String, bool> shouldAuthenticatedRoutes = {
+    unDefinedRoute: false,
+    splashRoute: false,
+    authRoute: false,
+    homeRoute: false,
+    connectionErrorRoute: false,
+    settingsRoute: false,
+  };
 }
 
 class RouteGenerator {

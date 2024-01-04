@@ -1,15 +1,10 @@
-import 'dart:io';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'package:get/get.dart';
 import 'package:image_cropper/image_cropper.dart';
-import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:intl/intl.dart' as intl;
 import 'package:loading_plus/loading_plus.dart';
-import 'package:upgrader/upgrader.dart';
 
 import '../main.dart';
 import 'theme/colors_manager.dart';
@@ -73,13 +68,13 @@ abstract class Components {
     await showDialog(
       context: context,
       builder: (ctx) {
-        if (Platform.isIOS) {
-          return CupertinoAlertDialog(
-            title: title,
-            content: content,
-            actions: actions ?? [],
-          );
-        }
+        // if (Platform.isIOS) {
+        //   return CupertinoAlertDialog(
+        //     title: title,
+        //     content: content,
+        //     actions: actions ?? [],
+        //   );
+        // }
         return AlertDialog(
           title: title,
           content: content,
@@ -128,8 +123,9 @@ abstract class Components {
     );
   }
 
-  static Future<bool> checkConnection() {
-    return InternetConnectionChecker().hasConnection;
+  static Future<bool> checkConnection() async {
+    return true;
+    // return InternetConnectionChecker().hasConnection;
   }
 
   static Future<CroppedFile?> cropImage({required String path, bool isLogo = false}) async {
@@ -243,22 +239,6 @@ abstract class Components {
       },
     );
     return dateTime;
-  }
-
-  static Upgrader upgrader() {
-    return Upgrader(
-      messages: UpgraderMessages(
-        code: Get.locale!.languageCode,
-      ),
-      debugDisplayAlways: false,
-      debugLogging: false,
-      shouldPopScope: () => false,
-      showIgnore: false,
-      showLater: false,
-      canDismissDialog: false,
-      dialogStyle: Platform.isIOS ? UpgradeDialogStyle.cupertino : UpgradeDialogStyle.material,
-      durationUntilAlertAgain: const Duration(minutes: 1),
-    );
   }
 
   // static String getMobileNumberWithCountryCode({

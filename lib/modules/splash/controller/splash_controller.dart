@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
-import '../../../resources/components.dart';
 import '../../../resources/managers/routes_manager.dart';
 
 class SplashController extends GetxController {
@@ -17,11 +16,6 @@ class SplashController extends GetxController {
   }
 
   Future<void> checkConnection() async {
-    final bool result = await Components.checkConnection();
-    if (result == true) {
-      Get.toNamed(Routes.authRoute);
-    } else {
-      Get.offAllNamed(Routes.connectionErrorRoute);
-    }
+    Get.toNamed(Routes.authRoute);
   }
 }

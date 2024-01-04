@@ -8,6 +8,7 @@ import 'package:package_info_plus/package_info_plus.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'resources/managers/routes_manager.dart';
+import 'resources/services/navigator_service.dart';
 import 'resources/theme/custom_theme_data.dart';
 import 'resources/theme/theme_manager.dart';
 import 'resources/services/master_functions_service.dart';
@@ -46,7 +47,7 @@ class MyApp extends StatefulWidget {
   State<MyApp> createState() => _MyAppState();
 }
 
-class _MyAppState extends State<MyApp> {
+class _MyAppState extends State<MyApp> with RouteAware {
   @override
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -69,6 +70,9 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeManager.getLightTheme(),
       // darkTheme: ThemeManager.getDarkTheme(),
       themeMode: SharedPrefsService.instance.getThemeMode(),
+      navigatorObservers: [
+        NavigatorService(),
+      ],
       navigatorKey: navigatorKey,
       scaffoldMessengerKey: scaffoldMessengerKey,
       builder: (BuildContext context, Widget? child) {
