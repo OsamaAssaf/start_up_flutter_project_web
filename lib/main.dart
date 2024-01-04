@@ -1,19 +1,4 @@
-import 'package:flutter/material.dart';
-
-import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:get/get.dart';
-import 'package:loading_plus/loading_plus.dart';
-import 'package:package_info_plus/package_info_plus.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-
-import 'resources/managers/routes_manager.dart';
-import 'resources/services/navigator_service.dart';
-import 'resources/theme/custom_theme_data.dart';
-import 'resources/theme/theme_manager.dart';
-import 'resources/services/master_functions_service.dart';
-import 'resources/services/notification_service.dart';
-import 'resources/services/shared_prefs_service.dart';
+import 'resources/helpers/all_imports.dart';
 
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 final GlobalKey<ScaffoldMessengerState> scaffoldMessengerKey = GlobalKey<ScaffoldMessengerState>();

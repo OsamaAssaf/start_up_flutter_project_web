@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-
-import '../../main.dart';
+import '../helpers/all_imports.dart';
 
 class MainButton extends StatelessWidget {
   const MainButton({

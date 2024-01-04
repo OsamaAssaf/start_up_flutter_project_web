@@ -1,4 +1,4 @@
-import 'package:flutter_dotenv/flutter_dotenv.dart';
+import '../helpers/all_imports.dart';
 
 class ConstantsManager {
   static const String arabicLangValue = 'ar';

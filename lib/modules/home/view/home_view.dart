@@ -1,12 +1,8 @@
-import 'package:flutter/material.dart';
-
-import 'package:get/get.dart';
-
-import '../controller/home_controller.dart';
-import '../widgets/drawer_home.dart';
+import '../../../resources/helpers/all_imports.dart';
 
 class HomeView extends StatelessWidget {
   HomeView({super.key});
+
   final HomeController homeController = Get.find();
 
   @override

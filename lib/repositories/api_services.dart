@@ -1,7 +1,5 @@
-import 'package:http/http.dart' as http;
-
-import '../resources/managers/constants_manager.dart';
-import '../resources/managers/exception_manager.dart';
+import '../resources/helpers/all_imports.dart';
+import '../resources/helpers/conflict_imports.dart' as http;
 
 class ApiServices {
   static Future<http.Response> get(String endPoint) async {

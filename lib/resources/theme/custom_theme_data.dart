@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import '../helpers/all_imports.dart';
 
 class CustomThemeData extends ThemeExtension<CustomThemeData> {
   CustomThemeData({
@@ -15,6 +15,7 @@ class CustomThemeData extends ThemeExtension<CustomThemeData> {
     // required this.pink,
     // required this.blue,
   });
+
   final Color white;
   final Color black;
   final Color success;
@@ -25,6 +26,7 @@ class CustomThemeData extends ThemeExtension<CustomThemeData> {
   final Color lightGrey;
   final Color darkGrey;
   final Color textField;
+
   // final Color pink;
   // final Color blue;
 

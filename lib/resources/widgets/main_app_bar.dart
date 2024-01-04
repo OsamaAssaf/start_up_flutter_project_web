@@ -1,12 +1,4 @@
-import 'package:flutter/material.dart';
-
-import 'package:flutter_svg/svg.dart';
-import 'package:get/get.dart';
-
-import '../../main.dart';
-import '../components.dart';
-import '../managers/assets_manager.dart';
-import '../managers/constants_manager.dart';
+import '../helpers/all_imports.dart';
 
 class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
   const MainAppBar({

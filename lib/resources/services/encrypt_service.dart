@@ -1,33 +1,32 @@
-import 'package:encrypt/encrypt.dart';
-
-import '../managers/constants_manager.dart';
+import '../helpers/all_imports.dart';
+import '../helpers/conflict_imports.dart' as en;
 
 class EncryptionService {
   EncryptionService._();
   static final EncryptionService instance = EncryptionService._();
 
   Future<String> encrypt(String plainText) async {
-    final IV iv = _getIv();
-    final Encrypter encrypter = _getEncrypter();
-    final Encrypted encrypted = encrypter.encrypt(plainText, iv: iv);
+    final en.IV iv = _getIv();
+    final en.Encrypter encrypter = _getEncrypter();
+    final en.Encrypted encrypted = encrypter.encrypt(plainText, iv: iv);
     return encrypted.base64;
   }
 
   Future<String> decrypt(String encryptedText) async {
-    final IV iv = _getIv();
-    final Encrypter encrypter = _getEncrypter();
+    final en.IV iv = _getIv();
+    final en.Encrypter encrypter = _getEncrypter();
     final String decrypted = encrypter.decrypt64(encryptedText, iv: iv);
     return decrypted;
   }
 
-  Encrypter _getEncrypter() {
-    final Key key = Key.fromBase64(DotenvManager.encryptionKey);
-    final Encrypter encrypter = Encrypter(AES(key, mode: AESMode.ecb));
+  en.Encrypter _getEncrypter() {
+    final en.Key key = en.Key.fromBase64(DotenvManager.encryptionKey);
+    final en.Encrypter encrypter = en.Encrypter(en.AES(key, mode: en.AESMode.ecb));
     return encrypter;
   }
 
-  IV _getIv() {
-    final IV iv = IV.fromLength(16);
+  en.IV _getIv() {
+    final en.IV iv = en.IV.fromLength(16);
     return iv;
   }
 }

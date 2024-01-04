@@ -1,13 +1,10 @@
-import 'dart:math' as math;
-
-import 'package:awesome_notifications/awesome_notifications.dart';
-import 'package:firebase_messaging/firebase_messaging.dart';
-
-import '../../resources/theme/colors_manager.dart';
+import '../helpers/all_imports.dart';
 
 class NotificationService {
   NotificationService._();
+
   static final NotificationService instance = NotificationService._();
+
   Future<void> _initAwesomeNotifications() async {
     await AwesomeNotifications().initialize(
       'resource://drawable/app_icon',
@@ -59,7 +56,7 @@ class NotificationService {
       content: NotificationContent(
         channelKey: 'notification_channel_key',
         groupKey: 'notification_channel',
-        id: math.Random().nextInt(10000),
+        id: Random().nextInt(10000),
         title: title,
         body: body,
         actionType: ActionType.Default,

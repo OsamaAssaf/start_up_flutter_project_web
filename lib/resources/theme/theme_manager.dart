@@ -1,8 +1,4 @@
-import 'package:flutter/material.dart';
-
-import '../managers/fonts_manager.dart';
-import 'colors_manager.dart';
-import 'custom_theme_data.dart';
+import '../helpers/all_imports.dart';
 
 class ThemeManager {
   static ThemeData getLightTheme() {

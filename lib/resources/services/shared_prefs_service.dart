@@ -1,16 +1,8 @@
-import 'dart:convert';
-
-import 'package:flutter/material.dart';
-
-import 'package:shared_preferences/shared_preferences.dart';
-
-import '../../main.dart';
-import '../../models/user_model.dart';
-import '../../resources/managers/constants_manager.dart';
-import 'encrypt_service.dart';
+import '../helpers/all_imports.dart';
 
 class SharedPrefsService {
   SharedPrefsService._();
+
   static final SharedPrefsService instance = SharedPrefsService._();
 
   Future<void> init() async {

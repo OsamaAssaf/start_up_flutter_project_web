@@ -1,6 +1,4 @@
-import 'package:get/get.dart';
-
-import '../controller/auth_controller.dart';
+import '../../../resources/helpers/all_imports.dart';
 
 class AuthBinding extends Bindings {
   @override

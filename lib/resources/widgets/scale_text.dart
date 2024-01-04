@@ -1,8 +1,4 @@
-import 'dart:math';
-
-import 'package:flutter/material.dart';
-
-import '../components.dart';
+import '../helpers/all_imports.dart';
 
 class ScaleText extends StatelessWidget {
   const ScaleText(
@@ -19,6 +15,7 @@ class ScaleText extends StatelessWidget {
     this.tooltipTriggerMode = TooltipTriggerMode.tap,
     this.isFromDialog = false,
   });
+
   final String text;
   final TextStyle? style;
   final TextAlign textAlign;

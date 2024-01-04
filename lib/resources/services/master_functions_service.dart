@@ -1,16 +1,10 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
-import 'package:flutter/services.dart';
-
-import 'package:package_info_plus/package_info_plus.dart';
-
-import '../../main.dart';
-import '../theme/colors_manager.dart';
-import 'shared_prefs_service.dart';
+import '../helpers/all_imports.dart';
 
 class MasterFunctionsService {
   MasterFunctionsService._();
+
   static final MasterFunctionsService instance = MasterFunctionsService._();
+
   Future<void> initPackageInfo() async {
     packageInfo = await PackageInfo.fromPlatform();
   }

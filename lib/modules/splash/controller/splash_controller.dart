@@ -1,10 +1,4 @@
-import 'dart:async';
-
-import 'package:flutter/material.dart';
-
-import 'package:get/get.dart';
-
-import '../../../resources/managers/routes_manager.dart';
+import '../../../resources/helpers/all_imports.dart';
 
 class SplashController extends GetxController {
   @override

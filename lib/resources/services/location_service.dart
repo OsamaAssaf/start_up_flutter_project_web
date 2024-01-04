@@ -1,17 +1,11 @@
-import 'dart:io';
-
-import 'package:flutter/material.dart';
-
-import 'package:geolocator/geolocator.dart';
-import 'package:get/get.dart';
-
-import '../../main.dart';
-import '../components.dart';
-import '../widgets/scale_text.dart';
+import '../helpers/all_imports.dart';
+import '../helpers/conflict_imports.dart';
 
 class LocationService {
   LocationService._();
+
   static final instance = LocationService._();
+
   Future<Position?> getCurrentLocation(BuildContext context) async {
     bool serviceEnabled;
     LocationPermission permission;

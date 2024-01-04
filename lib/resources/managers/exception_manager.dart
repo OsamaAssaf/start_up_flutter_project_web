@@ -1,8 +1,8 @@
-import '../../main.dart';
-import '../components.dart';
+import '../helpers/all_imports.dart';
 
 class ExceptionManager {
   ExceptionManager._();
+
   static final ExceptionManager instance = ExceptionManager._();
 
   static const Duration timedOutDuration = Duration(seconds: 15);

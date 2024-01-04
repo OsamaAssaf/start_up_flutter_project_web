@@ -1,10 +1,4 @@
-import 'package:flutter/material.dart';
-
-import 'package:get/get.dart';
-
-import '../../../main.dart';
-import '../../../resources/widgets/main_app_bar.dart';
-import '../controller/connection_error_controller.dart';
+import '../../../resources/helpers/all_imports.dart';
 
 class ConnectionErrorView extends StatelessWidget {
   ConnectionErrorView({super.key});

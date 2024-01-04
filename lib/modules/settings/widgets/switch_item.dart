@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
-
-import '../../../main.dart';
-import '../../../resources/widgets/scale_text.dart';
+import '../../../resources/helpers/all_imports.dart';
 
 class SwitchItem extends StatelessWidget {
   const SwitchItem({
@@ -11,6 +8,7 @@ class SwitchItem extends StatelessWidget {
     this.leading,
     this.onChanged,
   });
+
   final bool value;
   final String title;
   final Widget? leading;

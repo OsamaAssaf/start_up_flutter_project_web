@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import '../../../resources/helpers/all_imports.dart';
 
 class SettingsDivider extends StatelessWidget {
   const SettingsDivider({super.key});

@@ -1,19 +1,5 @@
-import 'dart:ui';
-
-import 'package:flutter/material.dart';
-
-import 'package:get/get.dart';
-import 'package:share_plus/share_plus.dart';
-import 'package:url_launcher/url_launcher.dart';
-
-import 'package:start_up_workspace_web/resources/widgets/main_text_field.dart';
-import '../../../main.dart';
-import '../../../resources/components.dart';
-import '../../../resources/managers/assets_manager.dart';
-import '../../../resources/managers/constants_manager.dart';
-import '../../../resources/managers/routes_manager.dart';
-import '../../../resources/managers/validators_manager.dart';
-import '../../../resources/widgets/scale_text.dart';
+import '../../../resources/helpers/all_imports.dart';
+import '../../../resources/helpers/conflict_imports.dart';
 
 class DrawerHome extends StatelessWidget {
   const DrawerHome({super.key});

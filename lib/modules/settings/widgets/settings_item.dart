@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
-
-import '../../../main.dart';
-import '../../../resources/widgets/scale_text.dart';
+import '../../../resources/helpers/all_imports.dart';
 
 class SettingsItem extends StatelessWidget {
   const SettingsItem({
@@ -10,6 +7,7 @@ class SettingsItem extends StatelessWidget {
     this.onTap,
     this.leading,
   });
+
   final String title;
   final void Function()? onTap;
   final Widget? leading;

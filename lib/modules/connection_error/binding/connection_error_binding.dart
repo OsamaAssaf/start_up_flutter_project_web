@@ -1,6 +1,4 @@
-import 'package:get/get.dart';
-
-import '../controller/connection_error_controller.dart';
+import '../../../resources/helpers/all_imports.dart';
 
 class ConnectionErrorBinding extends Bindings {
   @override

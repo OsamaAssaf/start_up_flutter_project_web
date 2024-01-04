@@ -1,10 +1,8 @@
-import 'package:get/get.dart';
-
-import '../../../resources/enums/auth_type.dart';
-import '../../../resources/managers/routes_manager.dart';
+import '../../../resources/helpers/all_imports.dart';
 
 class AuthController extends GetxController {
   AuthType authType = AuthType.login;
+
   void changeAuthType() {
     authType = authType == AuthType.login ? AuthType.signUp : AuthType.login;
     update();
