@@ -119,43 +119,43 @@ abstract class Components {
     // return InternetConnectionChecker().hasConnection;
   }
 
-  static Future<CroppedFile?> cropImage(BuildContext context,
-      {required String path, bool isLogo = false}) async {
-    final Size size = MediaQuery.sizeOf(context);
-    final int minSize = (min(size.width, size.height) * 0.5).toInt();
-    CroppedFile? croppedFile = await ImageCropper().cropImage(
-      sourcePath: path,
-      cropStyle: isLogo ? CropStyle.circle : CropStyle.rectangle,
-      compressQuality: 100,
-      compressFormat: isLogo ? ImageCompressFormat.png : ImageCompressFormat.jpg,
-      aspectRatio: isLogo
-          ? const CropAspectRatio(ratioX: 1, ratioY: 1)
-          : const CropAspectRatio(ratioX: 16, ratioY: 9),
-      uiSettings: [
-        AndroidUiSettings(
-          toolbarTitle: localizations.chooseHowImageWillDisplayed,
-          toolbarColor: theme.colorScheme.primary,
-          toolbarWidgetColor: customTheme.white,
-          lockAspectRatio: true,
-        ),
-        IOSUiSettings(
-          title: localizations.chooseHowImageWillDisplayed,
-          aspectRatioLockEnabled: true,
-          resetAspectRatioEnabled: false,
-          aspectRatioPickerButtonHidden: true,
-          resetButtonHidden: true,
-        ),
-        WebUiSettings(
-          context: context,
-          boundary: CroppieBoundary(
-            height: minSize,
-            width: minSize,
-          ),
-        ),
-      ],
-    );
-    return croppedFile;
-  }
+  // static Future<CroppedFile?> cropImage(BuildContext context,
+  //     {required String path, bool isLogo = false}) async {
+  //   final Size size = MediaQuery.sizeOf(context);
+  //   final int minSize = (min(size.width, size.height) * 0.5).toInt();
+  //   CroppedFile? croppedFile = await ImageCropper().cropImage(
+  //     sourcePath: path,
+  //     cropStyle: isLogo ? CropStyle.circle : CropStyle.rectangle,
+  //     compressQuality: 100,
+  //     compressFormat: isLogo ? ImageCompressFormat.png : ImageCompressFormat.jpg,
+  //     aspectRatio: isLogo
+  //         ? const CropAspectRatio(ratioX: 1, ratioY: 1)
+  //         : const CropAspectRatio(ratioX: 16, ratioY: 9),
+  //     uiSettings: [
+  //       AndroidUiSettings(
+  //         toolbarTitle: localizations.chooseHowImageWillDisplayed,
+  //         toolbarColor: theme.colorScheme.primary,
+  //         toolbarWidgetColor: customTheme.white,
+  //         lockAspectRatio: true,
+  //       ),
+  //       IOSUiSettings(
+  //         title: localizations.chooseHowImageWillDisplayed,
+  //         aspectRatioLockEnabled: true,
+  //         resetAspectRatioEnabled: false,
+  //         aspectRatioPickerButtonHidden: true,
+  //         resetButtonHidden: true,
+  //       ),
+  //       WebUiSettings(
+  //         context: context,
+  //         boundary: CroppieBoundary(
+  //           height: minSize,
+  //           width: minSize,
+  //         ),
+  //       ),
+  //     ],
+  //   );
+  //   return croppedFile;
+  // }
 
   static Future<TimeOfDay?> timePicker(BuildContext context, {TimeOfDay? initialTime}) async {
     final TimeOfDay? time = await showTimePicker(
