@@ -91,10 +91,10 @@ class ConnectionErrorController extends GetxController {
   }
 
   Future<void> checkConnection() async {
-    Components.showLoading();
-    final bool result = await Components.checkConnection();
+    Components().showLoading();
+    final bool result = await Components().checkConnection();
     await Future.delayed(const Duration(milliseconds: 300));
-    Components.dismissLoading();
+    Components().dismissLoading();
     if (result == true) {
       Get.offAllNamed(Routes.splashRoute);
     }

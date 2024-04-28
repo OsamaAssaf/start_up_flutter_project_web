@@ -42,7 +42,7 @@ class ScaleText extends StatelessWidget {
             textScaler: TextScaler.linear(ScaleSize.textScaleFactor(context)),
             textAlign: textAlign,
             textDirection:
-                textDirection ?? (Components.isRTL() ? TextDirection.rtl : TextDirection.ltr),
+                textDirection ?? (Components().isRTL() ? TextDirection.rtl : TextDirection.ltr),
             text: span,
           );
           tp.layout(maxWidth: constraints.maxWidth);

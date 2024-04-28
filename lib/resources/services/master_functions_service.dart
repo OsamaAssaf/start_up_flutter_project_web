@@ -3,8 +3,8 @@ import '../helpers/all_imports.dart';
 class MasterFunctionsService {
   MasterFunctionsService._();
 
-  static final MasterFunctionsService instance = MasterFunctionsService._();
-
+  static final MasterFunctionsService _instance = MasterFunctionsService._();
+  factory MasterFunctionsService() => _instance;
   Future<void> initPackageInfo() async {
     packageInfo = await PackageInfo.fromPlatform();
   }
@@ -19,7 +19,7 @@ class MasterFunctionsService {
   }
 
   void initSystemUiStyle() {
-    final ThemeMode themeMode = SharedPrefsService.instance.getThemeMode();
+    final ThemeMode themeMode = SharedPrefsService().getThemeMode();
     if (themeMode == ThemeMode.light) {
       SystemChrome.setSystemUIOverlayStyle(
         SystemUiOverlayStyle(

@@ -14,7 +14,7 @@ class ApiServices {
         return http.Response(ExceptionManager.timedOutException, 408);
       },
     );
-    ExceptionManager.instance.checkTimedOut(response.statusCode);
+    ExceptionManager().checkTimedOut(response.statusCode);
     return response;
   }
 
@@ -34,7 +34,7 @@ class ApiServices {
         return http.Response(ExceptionManager.timedOutException, 408);
       },
     );
-    ExceptionManager.instance.checkTimedOut(response.statusCode);
+    ExceptionManager().checkTimedOut(response.statusCode);
     return response;
   }
 
@@ -54,7 +54,7 @@ class ApiServices {
         return http.Response(ExceptionManager.timedOutException, 408);
       },
     );
-    ExceptionManager.instance.checkTimedOut(response.statusCode);
+    ExceptionManager().checkTimedOut(response.statusCode);
     return response;
   }
 
@@ -70,7 +70,7 @@ class ApiServices {
         return http.Response(ExceptionManager.timedOutException, 408);
       },
     );
-    ExceptionManager.instance.checkTimedOut(response.statusCode);
+    ExceptionManager().checkTimedOut(response.statusCode);
     return response;
   }
 }

@@ -1,7 +1,11 @@
 import '../helpers/all_imports.dart';
 
 class ValidatorsManager {
-  static String? validateEmail(String? value) {
+  ValidatorsManager._();
+
+  static final ValidatorsManager _instance = ValidatorsManager._();
+  factory ValidatorsManager() => _instance;
+  String? validateEmail(String? value) {
     final RegExp regex = RegExp(r'^[\w-]+(\.[\w-]+)*@([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,7}$');
     if (value == null || value.isEmpty) {
       return localizations.pleaseEnterEmail;
@@ -12,7 +16,7 @@ class ValidatorsManager {
     return null;
   }
 
-  static String? validatePassword(String? value) {
+  String? validatePassword(String? value) {
     final RegExp uppercasePattern = RegExp(r'(?=.*[A-Z])');
     final RegExp lowercasePattern = RegExp(r'(?=.*[a-z])');
     final RegExp numberPattern = RegExp(r'(?=.*[0-9])');
@@ -35,7 +39,7 @@ class ValidatorsManager {
     return null;
   }
 
-  static String? validateConfirmPassword(String? value, String password) {
+  String? validateConfirmPassword(String? value, String password) {
     if (value == null || value.isEmpty) {
       return localizations.pleaseEnterConfirmPassword;
     }
@@ -45,7 +49,7 @@ class ValidatorsManager {
     return null;
   }
 
-  static String? validatePhone(String? value) {
+  String? validatePhone(String? value) {
     final RegExp regex = RegExp(r'^\+?[0-9]{8,}$');
     if (value == null || value.isEmpty) {
       return localizations.pleaseEnterPhone;
@@ -56,56 +60,56 @@ class ValidatorsManager {
     return null;
   }
 
-  static String? validateNotEmpty(String? value) {
+  String? validateNotEmpty(String? value) {
     if (value == null || value.isEmpty) {
       return localizations.fieldRequired;
     }
     return null;
   }
 
-// static String? validateName(String? value) {
+//  String? validateName(String? value) {
 //   if (value == null || value.isEmpty) {
 //     return 'pleaseEnterName';
 //   }
 //   return null;
 // }
 //
-// static String? validateDateOfBirth(String? value) {
+//  String? validateDateOfBirth(String? value) {
 //   if (value == null || value.isEmpty) {
 //     return 'pleaseChooseYourDateOfBirth';
 //   }
 //   return null;
 // }
 //
-// static String? validateGender(int? value) {
+//  String? validateGender(int? value) {
 //   if (value == null) {
 //     return 'pleaseChooseYourGender';
 //   }
 //   return null;
 // }
 //
-// static String? validateNationality(String? value) {
+//  String? validateNationality(String? value) {
 //   if (value == null) {
 //     return 'pleaseChooseYourNationality';
 //   }
 //   return null;
 // }
 //
-// static String? validateCountry(String? value) {
+//  String? validateCountry(String? value) {
 //   if (value == null) {
 //     return 'pleaseChooseYourCountry';
 //   }
 //   return null;
 // }
 //
-// static String? validateCity(String? value) {
+//  String? validateCity(String? value) {
 //   if (value == null || value.isEmpty) {
 //     return 'pleaseEnterCityState';
 //   }
 //   return null;
 // }
 //
-// static String? validateFeedback(String? value) {
+//  String? validateFeedback(String? value) {
 //   if (value == null || value.isEmpty) {
 //     return 'pleaseEnterYourFeedback';
 //   }

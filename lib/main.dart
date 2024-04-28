@@ -14,14 +14,14 @@ Future<void> main() async {
   await Future.wait(
     [
       dotenv.load(),
-      SharedPrefsService.instance.init(),
-      MasterFunctionsService.instance.initPackageInfo(),
-      MasterFunctionsService.instance.initPreferredOrientations(),
-      NotificationService.instance.initNotifications(),
+      SharedPrefsService().init(),
+      MasterFunctionsService().initPackageInfo(),
+      MasterFunctionsService().initPreferredOrientations(),
+      NotificationService().initNotifications(),
     ],
   );
   LoadingPlus.instance.init(navigatorKey);
-  MasterFunctionsService.instance.initSystemUiStyle();
+  MasterFunctionsService().initSystemUiStyle();
   runApp(const MyApp());
 }
 
@@ -36,7 +36,7 @@ class _MyAppState extends State<MyApp> with RouteAware {
   @override
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      NotificationService.instance.initListenersAndPermission();
+      NotificationService().initListenersAndPermission();
     });
     super.initState();
   }
@@ -51,10 +51,10 @@ class _MyAppState extends State<MyApp> with RouteAware {
       },
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      locale: Locale(SharedPrefsService.instance.getLanguage()),
+      locale: Locale(SharedPrefsService().getLanguage()),
       theme: ThemeManager.getLightTheme(),
       // darkTheme: ThemeManager.getDarkTheme(),
-      themeMode: SharedPrefsService.instance.getThemeMode(),
+      themeMode: SharedPrefsService().getThemeMode(),
       navigatorObservers: [
         NavigatorService(),
       ],

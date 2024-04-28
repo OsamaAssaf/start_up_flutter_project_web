@@ -18,7 +18,7 @@ class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      systemOverlayStyle: Components.systemUiOverlayStyle(),
+      systemOverlayStyle: Components().systemUiOverlayStyle(),
       automaticallyImplyLeading: false,
       title: Text(
         title,
@@ -33,7 +33,7 @@ class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
                 Get.back();
               },
               icon: RotatedBox(
-                quarterTurns: Components.isRTL() ? 2 : 0,
+                quarterTurns: Components().isRTL() ? 2 : 0,
                 child: SvgPicture.asset(
                   IconsManager.backButtonSvg,
                   height: 22.0,

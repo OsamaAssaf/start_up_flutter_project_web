@@ -1,8 +1,8 @@
 class LocationService {
   LocationService._();
 
-  static final instance = LocationService._();
-
+  static final LocationService _instance = LocationService._();
+  factory LocationService() => _instance;
   // Future<Position?> getCurrentLocation(BuildContext context) async {
   //   bool serviceEnabled;
   //   LocationPermission permission;

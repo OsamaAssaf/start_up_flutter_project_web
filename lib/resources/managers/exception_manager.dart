@@ -3,8 +3,8 @@ import '../helpers/all_imports.dart';
 class ExceptionManager {
   ExceptionManager._();
 
-  static final ExceptionManager instance = ExceptionManager._();
-
+  static final ExceptionManager _instance = ExceptionManager._();
+  factory ExceptionManager() => _instance;
   static const Duration timedOutDuration = Duration(seconds: 15);
   static const String timedOutException = 'timedOut';
 
@@ -16,7 +16,7 @@ class ExceptionManager {
 
   void showException([String? error]) {
     final Map<String, dynamic>? exception = exceptionsMap[error];
-    Components.snackBar(
+    Components().snackBar(
       message: error != null && exception != null
           ? exception['value'] ?? localizations.somethingWrongTryAgain
           : localizations.somethingWrongTryAgain,

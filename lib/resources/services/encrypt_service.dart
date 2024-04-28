@@ -3,7 +3,8 @@ import '../helpers/conflict_imports.dart' as en;
 
 class EncryptionService {
   EncryptionService._();
-  static final EncryptionService instance = EncryptionService._();
+  static final EncryptionService _instance = EncryptionService._();
+  factory EncryptionService() => _instance;
 
   Future<String> encrypt(String plainText) async {
     final en.IV iv = _getIv();
